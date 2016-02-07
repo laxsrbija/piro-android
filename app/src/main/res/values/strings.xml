@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">PIRO</string>
+    <string name="button">Desna LED rasveta</string>
+    <string name="button2">Dnevni režim peći</string>
 </resources>
