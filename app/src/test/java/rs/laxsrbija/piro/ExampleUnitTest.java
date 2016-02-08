@@ -1,4 +1,4 @@
-package com.example.lax.myapplication;
+package rs.laxsrbija.piro;
 
 import org.junit.Test;
 
