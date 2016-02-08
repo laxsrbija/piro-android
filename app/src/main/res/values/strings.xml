@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">PIRO</string>
-    <string name="button">Desna LED rasveta</string>
-    <string name="button2">Dnevni režim peći</string>
+    <string name="ledDesno">Desna LED rasveta</string>
 </resources>
