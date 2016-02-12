@@ -122,7 +122,7 @@ public class UcitavanjePodataka {
                     eventType = parser.next();
                 }
 
-                Log.v(mKontekst.getResources().getString(R.string.app_name), "Štampanje ucitanog niza:");
+                Log.v(mKontekst.getResources().getString(R.string.app_name), "Štampanje učitanog niza:");
                 for (int i = 0; i < niz.size(); i++)
                     Log.v(mKontekst.getResources().getString(R.string.app_name), niz.get(i));
 
