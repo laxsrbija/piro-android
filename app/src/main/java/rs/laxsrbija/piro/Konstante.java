@@ -9,7 +9,7 @@ public class Konstante {
 
     private static String adresaUpita = "piro/rpi/piro-querry.php";
 
-    static String adresaServera = "http://192.168.1.2/";
+    static String adresaServera = "http://192.168.1.8/";
 
     static String getXML = "piro/rpi/piro.xml";
     static String azurirajVreme = adresaUpita.concat("?f=azurirajVreme&arg=android");
