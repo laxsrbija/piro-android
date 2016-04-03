@@ -6,16 +6,17 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
 /**
- * Created by LAX on 8.2.2016..
+ * Created by LAX on 8.2.2016.
+ * Project piro-android
  */
 
-public class Komunikacija {
+public class PiroComms {
 
     private static RequestQueue requestQueue;
 
-    public Komunikacija() {}
+    public PiroComms() {}
 
-    public void inicijalizuj(Context kontekst) {
+    public void initialize(Context kontekst) {
         requestQueue = Volley.newRequestQueue(kontekst);
     }
 
