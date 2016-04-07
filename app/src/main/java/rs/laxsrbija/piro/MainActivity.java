@@ -12,27 +12,22 @@ import com.android.volley.toolbox.StringRequest;
 
 public class MainActivity extends AppCompatActivity {
 
-    Switch ledRight;
     PiroComms mComms;
-    PiroLoadData mLoadData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ledRight = (Switch) findViewById(R.id.ledRight);
-
         mComms = new PiroComms();
         mComms.initialize(this);
 
-        mLoadData = new PiroLoadData(this);
+        PiroLoadData.loadData(this);
 
-        ledRight.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.ledRight).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 mComms.getRequestQueue()
-                        .add(PiroRequestSender.reqestWithoutResponse(PiroConstants.SET_LED_LIGHT));
-                Log.v(PiroConstants.APP_NAME, "Izvršen zahtev desne LED rasvete!");
+                        .add(PiroLoadData.reqestWithoutResponse(PiroConstants.SET_LED_RIGHT));
             }
         });
 

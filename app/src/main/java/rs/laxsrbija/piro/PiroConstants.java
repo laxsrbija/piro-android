@@ -14,10 +14,13 @@ public class PiroConstants {
 
     private static final String QUERY_ADDRESS = SERVER_ADDRES.concat("piro/rpi/piro-query.php");
 
-    public static final String GET_XML = SERVER_ADDRES.concat("piro/rpi/piro.xml");
+    public static final String GET_LED_MAIN = QUERY_ADDRESS.concat("?f=getRelayStatus&arg=0");
+    public static final String GET_LED_RIGHT = QUERY_ADDRESS.concat("?f=getRelayStatus&arg=1");
+    public static final String GET_LED_LEFT = QUERY_ADDRESS.concat("?f=getRelayStatus&arg=2");
+
     public static final String WEATHER_UPDATE =
             QUERY_ADDRESS.concat("?f=azurirajVreme&arg=android");
 
-    public static final String SET_LED_LIGHT = QUERY_ADDRESS.concat("?f=toggleRelay&arg=1");
+    public static final String SET_LED_RIGHT = QUERY_ADDRESS.concat("?f=toggleRelay&arg=1");
 
 }
