@@ -21,6 +21,8 @@ public class PiroConstants {
     public static final String WEATHER_UPDATE =
             QUERY_ADDRESS.concat("?f=azurirajVreme&arg=android");
 
+    public static final String SET_LED_MAIN = QUERY_ADDRESS.concat("?f=toggleRelay&arg=0");
     public static final String SET_LED_RIGHT = QUERY_ADDRESS.concat("?f=toggleRelay&arg=1");
+    public static final String SET_LED_LEFT = QUERY_ADDRESS.concat("?f=toggleRelay&arg=2");
 
 }
