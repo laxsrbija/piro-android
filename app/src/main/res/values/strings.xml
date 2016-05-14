@@ -1,6 +1,35 @@
 <resources>
+
     <string name="app_name">PIRO</string>
+
     <string name="ledCentar">Centralni LED paneli</string>
     <string name="ledDesno">Desna LED rasveta</string>
     <string name="ledLevo">Leva LED rasveta</string>
+
+    <string name="pc">Računar</string>
+
+    <string name="city" translatable="false">N/A</string>
+    <string name="day" translatable="false">N/A</string>
+
+    <string name="currentTemperature" translatable="false">N/A</string>
+    <string name="currentConditions" translatable="false">N/A</string>
+    <string name="uv" translatable="false">N/A</string>
+    <string name="visibility" translatable="false">N/A</string>
+    <string name="feelsLike" translatable="false">N/A</string>
+    <string name="precipitation" translatable="false">N/A</string>
+    <string name="dailyMax" translatable="false">N/A</string>
+    <string name="dailyMin" translatable="false">N/A</string>
+    <string name="dailyConditions" translatable="false">N/A</string>
+
+    <string name="thermalTemp" translatable="false">N/A</string>
+    <string name="thermalMode" translatable="false">N/A</string>
+    <string name="thermalIncrement" translatable="false">+</string>
+    <string name="thermalDecrement" translatable="false">-</string>
+    <string name="thermalOff">Isklj.</string>
+
+    <string name="systemUptime">Operativno vreme:</string>
+    <string name="systemTemp">Temperatura servera:</string>
+    <string name="systemLoad">Prosečno opterećenje servera:</string>
+    <string name="systemUptimeToday">Server je pokrenut danas.</string>
+
 </resources>

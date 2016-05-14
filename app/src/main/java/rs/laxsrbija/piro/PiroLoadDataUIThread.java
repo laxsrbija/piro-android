@@ -1,8 +1,12 @@
 package rs.laxsrbija.piro;
 
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 /**
  * Created by LAX on 7.4.2016..
@@ -12,7 +16,14 @@ public class PiroLoadDataUIThread {
 
     public static void runOnUIThreadSwitch(View view, String string) {
         ((Switch) view).setChecked("1".equals(string));
-        Log.v(PiroConstants.APP_NAME, "runOnUIThreadSwitch: " + string);
+    }
+
+    public static void runOnUIThreadTextView(View view, String string) {
+        ((TextView) view).setText(string);
+    }
+
+    public static void runOnUIThreadImageView(AppCompatActivity context, View view, String address) {
+        Glide.with(context).load(address).into((ImageView) view);
     }
 
 }
