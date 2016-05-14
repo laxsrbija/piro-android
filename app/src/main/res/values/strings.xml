@@ -12,10 +12,14 @@
     <string name="day" translatable="false">N/A</string>
 
     <string name="currentTemperature" translatable="false">N/A</string>
+    <string name="currentTemperatureDesc">Value of current temperature</string>
     <string name="currentConditions" translatable="false">N/A</string>
     <string name="uv" translatable="false">N/A</string>
+    <string name="weatherVisibility">Vidljivost</string>
     <string name="visibility" translatable="false">N/A</string>
+    <string name="weatherRealFeel">Subjektivni osećaj</string>
     <string name="feelsLike" translatable="false">N/A</string>
+    <string name="weatherPrecipitation">Mogućnost padavina</string>
     <string name="precipitation" translatable="false">N/A</string>
     <string name="dailyMax" translatable="false">N/A</string>
     <string name="dailyMin" translatable="false">N/A</string>

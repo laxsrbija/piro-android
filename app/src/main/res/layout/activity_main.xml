@@ -31,6 +31,225 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="2dp"
+                card_view:cardBackgroundColor="#457ad1"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="2dp" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="155dp" >
+
+                    <TextView
+                        android:id="@+id/city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/city"
+                        android:textColor="@color/white"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/currentConditions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="40dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="@string/currentConditions"
+                        android:textColor="@color/white"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/currentTemperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="@string/currentTemperature"
+                        android:textColor="@color/white"
+                        android:textSize="48sp"/>
+
+                    <ImageView
+                        android:id="@+id/currentTemperatureImg"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="@string/currentTemperatureDesc"
+                        android:src="@drawable/cloudy" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/weatherRealFeel"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:contentDescription="@string/weatherRealFeel"
+                                android:src="@drawable/weather_realfeel"
+                                android:layout_marginTop="1dp"
+                                android:layout_marginEnd="2dp"/>
+
+                            <TextView
+                                android:id="@+id/feelsLike"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/feelsLike"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                android:fontFamily="sans-serif-light"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="2dp"
+                                android:layout_toEndOf="@id/weatherRealFeel"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="75dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/weatherVisibility"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:contentDescription="@string/weatherVisibility"
+                                android:src="@drawable/weather_visibility"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginEnd="2dp"/>
+
+                            <TextView
+                                android:id="@+id/visibility"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/visibility"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                android:fontFamily="sans-serif-light"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="2dp"
+                                android:layout_toEndOf="@id/weatherVisibility"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/weatherPrecipitation"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:contentDescription="@string/weatherPrecipitation"
+                                android:src="@drawable/weather_precipitation"/>
+
+                            <TextView
+                                android:id="@+id/precipitation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/precipitation"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                android:fontFamily="sans-serif-light"
+                                android:layout_alignParentEnd="true"
+                                android:layout_toEndOf="@id/weatherPrecipitation"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginEnd="2dp"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                card_view:cardBackgroundColor="#3c4e57"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="2dp" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/uv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/uv"/>
+
+                    <TextView
+                        android:id="@+id/day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/day"/>
+
+                    <ImageView
+                        android:id="@+id/dailyTemperatureImg"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp" />
+
+                    <TextView
+                        android:id="@+id/dailyMax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/dailyMax"/>
+
+                    <TextView
+                        android:id="@+id/dailyMin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/dailyMin"/>
+
+                    <TextView
+                        android:id="@+id/dailyConditions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/dailyConditions"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
                 card_view:cardBackgroundColor="#2B2B2B"
                 card_view:cardCornerRadius="4dp"
                 card_view:cardElevation="2dp" >
@@ -72,125 +291,6 @@
                         android:layout_marginEnd="15dp"
                         android:layout_marginStart="10dp"
                         android:text="@string/pc" />
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="15dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
-                card_view:cardBackgroundColor="#2B2B2B"
-                card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp" >
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:id="@+id/city"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/city"/>
-
-                    <TextView
-                        android:id="@+id/currentConditions"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/currentConditions"/>
-
-                    <TextView
-                        android:id="@+id/currentTemperature"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/currentTemperature"/>
-
-                    <ImageView
-                        android:id="@+id/currentTemperatureImg"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp" />
-
-                    <TextView
-                        android:id="@+id/uv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/uv"/>
-
-                    <TextView
-                        android:id="@+id/visibility"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/visibility"/>
-
-                    <TextView
-                        android:id="@+id/precipitation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/precipitation"/>
-
-                    <TextView
-                        android:id="@+id/feelsLike"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/feelsLike"/>
-
-                    <TextView
-                        android:id="@+id/day"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/day"/>
-
-                    <ImageView
-                        android:id="@+id/dailyTemperatureImg"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp" />
-
-                    <TextView
-                        android:id="@+id/dailyMax"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/dailyMax"/>
-
-                    <TextView
-                        android:id="@+id/dailyMin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/dailyMin"/>
-
-                    <TextView
-                        android:id="@+id/dailyConditions"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/dailyConditions"/>
 
                 </LinearLayout>
 
