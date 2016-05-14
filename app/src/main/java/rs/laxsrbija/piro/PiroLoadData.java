@@ -1,6 +1,5 @@
 package rs.laxsrbija.piro;
 
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import com.android.volley.Request;
@@ -29,12 +28,8 @@ public class PiroLoadData {
 
         Log.v(PiroConstants.APP_NAME, "Pokrecem loadData...");
 
-        (new PiroLoadDataTask(PiroConstants.GET_LED_RIGHT, context.findViewById(R.id.ledRight), 1))
-                .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-        (new PiroLoadDataTask(PiroConstants.GET_LED_LEFT, context.findViewById(R.id.ledLeft), 1))
-                .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-        (new PiroLoadDataTask(PiroConstants.GET_LED_MAIN, context.findViewById(R.id.ledMain), 1))
-                .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        PiroLoadDataTask loadDataTask = new PiroLoadDataTask(PiroConstants.GET_JSON, context);
+        loadDataTask.execute();
 
     }
 }
