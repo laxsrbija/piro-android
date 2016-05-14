@@ -1,11 +1,14 @@
 package rs.laxsrbija.piro;
 
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
 
-    PiroComms mComms;
+    private PiroComms mComms;
+    private SwipeRefreshLayout refreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +21,18 @@ public class MainActivity extends AppCompatActivity {
 
         PiroLoadData.loadData(this);
 
-        PiroOnClickListeners.setOnClickListener(this, mComms);
+        refreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+        refreshLayout.setOnRefreshListener(this);
+
+        PiroOnClickListenerSetter.setOnClickListener(this, mComms);
 
     }
 
+    @Override
+    public void onRefresh() {
+        PiroLoadDataTask task =  new PiroLoadDataTask(PiroConstants.GET_JSON_FORCE, this);
+
+        task.setRefreshLayout(refreshLayout);
+        task.execute();
+    }
 }
