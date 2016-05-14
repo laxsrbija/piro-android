@@ -1,6 +1,6 @@
 package rs.laxsrbija.piro;
 
-import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
@@ -13,11 +13,17 @@ import com.android.volley.toolbox.Volley;
 public class PiroComms {
 
     private static RequestQueue requestQueue;
+    private AppCompatActivity context;
 
     public PiroComms() {}
 
-    public void initialize(Context kontekst) {
-        requestQueue = Volley.newRequestQueue(kontekst);
+    public void initialize(AppCompatActivity context) {
+        requestQueue = Volley.newRequestQueue(context);
+        this.context = context;
+    }
+
+    public AppCompatActivity getContext() {
+        return context;
     }
 
     public RequestQueue getRequestQueue() {
