@@ -71,57 +71,57 @@ public class PiroLoadDataTask extends AsyncTask<Void, Void, JSONObject> {
 
     @Override
     protected void onPostExecute(JSONObject result) {
+        if (result != null)
+            try {
 
-        try {
+                PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.ledMain),
+                        result.getString("ledCentar"));
+                PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.ledRight),
+                        result.getString("ledDesno"));
+                PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.ledLeft),
+                        result.getString("ledLevo"));
 
-            PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.ledMain),
-                    result.getString("ledCentar"));
-            PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.ledRight),
-                    result.getString("ledDesno"));
-            PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.ledLeft),
-                    result.getString("ledLevo"));
+                PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.pc),
+                        result.getString("racunar"));
 
-            PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.pc),
-                    result.getString("racunar"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.city),
+                        result.getString("grad"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.day),
+                        result.getString("dan"));
 
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.city),
-                    result.getString("grad"));
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.day),
-                    result.getString("dan"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.currentTemperature),
+                        result.getString("trenutnaTemperatura").concat("°"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.currentConditions),
+                        result.getString("trenutnaStanje"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.uv),
+                        result.getString("uvIndeks"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.precipitation),
+                        result.getString("padavine").concat("%"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.visibility),
+                        result.getString("vidljivost"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.feelsLike),
+                        result.getString("subjektivniOsecaj").concat("°"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.dailyConditions),
+                        result.getString("dnevnaStanje"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.dailyMin),
+                        result.getString("dnevnaMax").concat("°"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.dailyMax),
+                        result.getString("dnevnaMin").concat("°"));
 
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.currentTemperature),
-                    result.getString("trenutnaTemperatura").concat("°"));
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.currentConditions),
-                    result.getString("trenutnaStanje"));
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.uv),
-                    result.getString("uvIndeks"));
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.precipitation),
-                    result.getString("padavine").concat("%"));
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.visibility),
-                    result.getString("vidljivost"));
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.feelsLike),
-                    result.getString("subjektivniOsecaj").concat("°"));
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.dailyConditions),
-                    result.getString("dnevnaStanje"));
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.dailyMin),
-                    result.getString("dnevnaMax").concat("°"));
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.dailyMax),
-                    result.getString("dnevnaMin").concat("°"));
+                PiroLoadDataUIThread.runOnUIThreadImageView(context, context.findViewById(R.id.currentTemperatureImg),
+                        result.getString("trenutnaIkona"));
+                PiroLoadDataUIThread.runOnUIThreadImageView(context, context.findViewById(R.id.dailyTemperatureImg),
+                        result.getString("dnevnaIkona"));
 
-            PiroLoadDataUIThread.runOnUIThreadImageView(context, context.findViewById(R.id.currentTemperatureImg),
-                    PiroConstants.WEATHER_ICONS.concat(result.getString("trenutnaIkona")).concat(".png"));
-            PiroLoadDataUIThread.runOnUIThreadImageView(context, context.findViewById(R.id.dailyTemperatureImg),
-                    PiroConstants.WEATHER_ICONS.concat(result.getString("dnevnaIkona")).concat(".png"));
+                thermalStatusBuilder(result);
+                systemStatusBuilder(result);
 
-            thermalStatusBuilder(result);
-            systemStatusBuilder(result);
+                if (refreshLayout != null)
+                    refreshLayout.setRefreshing(false);
 
-            if (refreshLayout != null)
-                refreshLayout.setRefreshing(false);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
     }
 
