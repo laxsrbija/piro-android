@@ -22,8 +22,9 @@ public class PiroLoadDataUIThread {
         ((TextView) view).setText(string);
     }
 
-    public static void runOnUIThreadImageView(AppCompatActivity context, View view, String address) {
-        Glide.with(context).load(address).into((ImageView) view);
+    public static void runOnUIThreadImageView(AppCompatActivity context, View view, String icon) {
+        Glide.with(context).load(context.getResources()
+                .getIdentifier(icon, "drawable", context.getPackageName())).into((ImageView) view);
     }
 
 }
