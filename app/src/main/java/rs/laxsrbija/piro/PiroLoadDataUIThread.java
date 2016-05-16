@@ -1,10 +1,11 @@
 package rs.laxsrbija.piro;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.bumptech.glide.Glide;
 
@@ -14,8 +15,13 @@ import com.bumptech.glide.Glide;
  */
 public class PiroLoadDataUIThread {
 
-    public static void runOnUIThreadSwitch(View view, String string) {
-        ((Switch) view).setChecked("1".equals(string));
+    public static void runOnUIThreadSwitch(AppCompatActivity context, View view, String string) {
+        ((ToggleButton) view).setChecked("1".equals(string));
+
+        if ("1".equals(string))
+            ((ToggleButton) view).setTextColor(ContextCompat.getColor(context, R.color.colorAccent));
+        else
+            ((ToggleButton) view).setTextColor(ContextCompat.getColor(context, R.color.white));
     }
 
     public static void runOnUIThreadTextView(View view, String string) {
