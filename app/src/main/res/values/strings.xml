@@ -2,17 +2,17 @@
 
     <string name="app_name">PIRO</string>
 
-    <string name="ledCentar">Centralni LED paneli</string>
-    <string name="ledDesno">Desna LED rasveta</string>
-    <string name="ledLevo">Leva LED rasveta</string>
-
-    <string name="pc">Računar</string>
+    <string name="ledCentar">C</string>
+    <string name="ledDesno">D</string>
+    <string name="ledLevo">L</string>
+    <string name="pc">R</string>
 
     <string name="city" translatable="false">N/A</string>
     <string name="day" translatable="false">N/A</string>
 
     <string name="currentTemperature" translatable="false">N/A</string>
-    <string name="currentTemperatureDesc">Value of current temperature</string>
+    <string name="currentTemperatureDesc">Trenutni uslovi</string>
+    <string name="dailyTemperatureDesc">Dnevni uslovi</string>
     <string name="currentConditions" translatable="false">N/A</string>
     <string name="uv" translatable="false">N/A</string>
     <string name="weatherVisibility">Vidljivost</string>
