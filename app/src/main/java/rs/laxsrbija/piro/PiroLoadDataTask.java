@@ -74,14 +74,14 @@ public class PiroLoadDataTask extends AsyncTask<Void, Void, JSONObject> {
         if (result != null)
             try {
 
-                PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.ledMain),
+                PiroLoadDataUIThread.runOnUIThreadSwitch(context, context.findViewById(R.id.ledMain),
                         result.getString("ledCentar"));
-                PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.ledRight),
+                PiroLoadDataUIThread.runOnUIThreadSwitch(context, context.findViewById(R.id.ledRight),
                         result.getString("ledDesno"));
-                PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.ledLeft),
+                PiroLoadDataUIThread.runOnUIThreadSwitch(context, context.findViewById(R.id.ledLeft),
                         result.getString("ledLevo"));
 
-                PiroLoadDataUIThread.runOnUIThreadSwitch(context.findViewById(R.id.pc),
+                PiroLoadDataUIThread.runOnUIThreadSwitch(context, context.findViewById(R.id.pc),
                         result.getString("racunar"));
 
                 PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.city),
@@ -93,8 +93,9 @@ public class PiroLoadDataTask extends AsyncTask<Void, Void, JSONObject> {
                         result.getString("trenutnaTemperatura").concat("°"));
                 PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.currentConditions),
                         result.getString("trenutnaStanje"));
+                /* TODO: Find a place to display UV value
                 PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.uv),
-                        result.getString("uvIndeks"));
+                        result.getString("uvIndeks"));*/
                 PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.precipitation),
                         result.getString("padavine").concat("%"));
                 PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.visibility),
@@ -104,9 +105,9 @@ public class PiroLoadDataTask extends AsyncTask<Void, Void, JSONObject> {
                 PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.dailyConditions),
                         result.getString("dnevnaStanje"));
                 PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.dailyMin),
-                        result.getString("dnevnaMax").concat("°"));
-                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.dailyMax),
                         result.getString("dnevnaMin").concat("°"));
+                PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.dailyMax),
+                        result.getString("dnevnaMax").concat("°"));
 
                 PiroLoadDataUIThread.runOnUIThreadImageView(context, context.findViewById(R.id.currentTemperatureImg),
                         result.getString("trenutnaIkona"));
