@@ -36,7 +36,7 @@
                 card_view:cardElevation="2dp" >
 
                 <RelativeLayout
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="155dp" >
 
                     <TextView
@@ -85,10 +85,10 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="20dp">
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
 
                         <RelativeLayout
                             android:layout_width="60dp"
@@ -98,22 +98,22 @@
                                 android:id="@+id/weatherRealFeel"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:contentDescription="@string/weatherRealFeel"
-                                android:src="@drawable/weather_realfeel"
+                                android:layout_marginEnd="2dp"
                                 android:layout_marginTop="1dp"
-                                android:layout_marginEnd="2dp"/>
+                                android:contentDescription="@string/weatherRealFeel"
+                                android:src="@drawable/weather_realfeel"/>
 
                             <TextView
                                 android:id="@+id/feelsLike"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/feelsLike"
-                                android:textColor="@color/white"
-                                android:textSize="14sp"
-                                android:fontFamily="sans-serif-light"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginTop="2dp"
-                                android:layout_toEndOf="@id/weatherRealFeel"/>
+                                android:layout_toEndOf="@id/weatherRealFeel"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/feelsLike"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"/>
 
                         </RelativeLayout>
 
@@ -125,22 +125,22 @@
                                 android:id="@+id/weatherVisibility"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:contentDescription="@string/weatherVisibility"
-                                android:src="@drawable/weather_visibility"
+                                android:layout_marginEnd="2dp"
                                 android:layout_marginTop="2dp"
-                                android:layout_marginEnd="2dp"/>
+                                android:contentDescription="@string/weatherVisibility"
+                                android:src="@drawable/weather_visibility"/>
 
                             <TextView
                                 android:id="@+id/visibility"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/visibility"
-                                android:textColor="@color/white"
-                                android:textSize="14sp"
-                                android:fontFamily="sans-serif-light"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginTop="2dp"
-                                android:layout_toEndOf="@id/weatherVisibility"/>
+                                android:layout_toEndOf="@id/weatherVisibility"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/visibility"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"/>
 
                         </RelativeLayout>
 
@@ -159,14 +159,14 @@
                                 android:id="@+id/precipitation"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="2dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_toEndOf="@id/weatherPrecipitation"
+                                android:fontFamily="sans-serif-light"
                                 android:text="@string/precipitation"
                                 android:textColor="@color/white"
-                                android:textSize="14sp"
-                                android:fontFamily="sans-serif-light"
-                                android:layout_alignParentEnd="true"
-                                android:layout_toEndOf="@id/weatherPrecipitation"
-                                android:layout_marginTop="2dp"
-                                android:layout_marginEnd="2dp"/>
+                                android:textSize="14sp"/>
 
                         </RelativeLayout>
 
@@ -177,6 +177,92 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                card_view:cardBackgroundColor="#3c4e57"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="2dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp">
+
+                    <ImageView
+                        android:id="@+id/dailyTemperatureImg"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="12dp"
+                        android:contentDescription="@string/dailyTemperatureDesc"
+                        android:src="@drawable/cloudy"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:text="@string/day"
+                            android:textColor="@color/white"
+                            android:textSize="17sp"/>
+
+                        <TextView
+                            android:id="@+id/dailyConditions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="@string/dailyConditions"
+                            android:textColor="@color/white"
+                            android:textSize="17sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dailyMax"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:text="@string/dailyMax"
+                            android:textColor="@color/white"
+                            android:textSize="17sp"
+                            android:layout_gravity="end"/>
+
+                        <TextView
+                            android:id="@+id/dailyMin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="@string/dailyMin"
+                            android:textColor="@color/white"
+                            android:textSize="17sp"
+                            android:layout_gravity="end"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- TODO <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -201,46 +287,9 @@
                         android:layout_marginStart="10dp"
                         android:text="@string/uv"/>
 
-                    <TextView
-                        android:id="@+id/day"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/day"/>
-
-                    <ImageView
-                        android:id="@+id/dailyTemperatureImg"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp" />
-
-                    <TextView
-                        android:id="@+id/dailyMax"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/dailyMax"/>
-
-                    <TextView
-                        android:id="@+id/dailyMin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/dailyMin"/>
-
-                    <TextView
-                        android:id="@+id/dailyConditions"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/dailyConditions"/>
-
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>-->
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -249,48 +298,67 @@
                 android:layout_gravity="center"
                 android:layout_marginEnd="15dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 card_view:cardBackgroundColor="#2B2B2B"
                 card_view:cardCornerRadius="4dp"
                 card_view:cardElevation="2dp" >
                 <!-- TODO: card_view:cardBackgroundColor="#457ad1" -->
 
                 <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical" >
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    style="?android:buttonBarStyle"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="4dp">
 
-                    <Switch
+                    <ToggleButton
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
                         android:id="@+id/ledMain"
-                        android:layout_width="fill_parent"
-                        android:layout_height="45dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/ledCentar" />
+                        style="?android:buttonBarButtonStyle"
+                        android:textOff="@string/ledCentar"
+                        android:textOn="@string/ledCentar"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="45sp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"/>
 
-                    <Switch
+                    <ToggleButton
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
                         android:id="@+id/ledRight"
-                        android:layout_width="fill_parent"
-                        android:layout_height="45dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/ledDesno" />
+                        style="?android:buttonBarButtonStyle"
+                        android:textOff="@string/ledDesno"
+                        android:textOn="@string/ledDesno"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="45sp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp" />
 
-                    <Switch
+                    <ToggleButton
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
                         android:id="@+id/ledLeft"
-                        android:layout_width="fill_parent"
-                        android:layout_height="45dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/ledLevo" />
+                        style="?android:buttonBarButtonStyle"
+                        android:textOff="@string/ledLevo"
+                        android:textOn="@string/ledLevo"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="45sp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp" />
 
-                    <Switch
+                    <ToggleButton
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
                         android:id="@+id/pc"
-                        android:layout_width="fill_parent"
-                        android:layout_height="45dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/pc" />
+                        style="?android:buttonBarButtonStyle"
+                        android:textOff="@string/pc"
+                        android:textOn="@string/pc"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="45sp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp" />
 
                 </LinearLayout>
 
@@ -363,26 +431,30 @@
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        style="?android:buttonBarStyle">
 
                         <Button
                             android:id="@+id/thermalIncrement"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/thermalIncrement"/>
+                            android:text="@string/thermalIncrement"
+                            style="?android:buttonBarButtonStyle"/>
 
                         <!-- TODO: Replace with ImageButton -->
                         <Button
                             android:id="@+id/thermalPower"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="PWR"/>
+                            android:text="PWR"
+                            style="?android:buttonBarButtonStyle"/>
 
                         <Button
                             android:id="@+id/thermalDecrement"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/thermalDecrement"/>
+                            android:text="@string/thermalDecrement"
+                            style="?android:buttonBarButtonStyle"/>
 
                     </LinearLayout>
 
