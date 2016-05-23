@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipeContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#1b1b1b"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
     android:fillViewport="true" >
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:fillViewport="false">
 
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -41,7 +43,7 @@
 
                     <TextView
                         android:id="@+id/city"
-                        android:layout_width="wrap_content"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="25dp"
                         android:layout_marginTop="20dp"
@@ -51,8 +53,8 @@
 
                     <TextView
                         android:id="@+id/currentConditions"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="230dp"
+                        android:layout_height="50dp"
                         android:layout_marginStart="25dp"
                         android:layout_marginTop="40dp"
                         android:fontFamily="sans-serif-light"
@@ -62,7 +64,7 @@
 
                     <TextView
                         android:id="@+id/currentTemperature"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="10dp"
@@ -202,7 +204,7 @@
                         android:src="@drawable/cloudy"/>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="12dp"
@@ -229,10 +231,10 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="60dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="25dp"
                         android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="25dp"
                         android:layout_marginTop="12dp"
                         android:orientation="vertical">
 
@@ -240,56 +242,27 @@
                             android:id="@+id/dailyMax"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="end"
                             android:fontFamily="sans-serif"
                             android:text="@string/dailyMax"
                             android:textColor="@color/white"
-                            android:textSize="17sp"
-                            android:layout_gravity="end"/>
+                            android:textSize="17sp"/>
 
                         <TextView
                             android:id="@+id/dailyMin"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="end"
                             android:fontFamily="sans-serif-light"
                             android:text="@string/dailyMin"
                             android:textColor="@color/white"
-                            android:textSize="17sp"
-                            android:layout_gravity="end"/>
+                            android:textSize="17sp"/>
 
                     </LinearLayout>
 
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
-
-            <!-- TODO <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="15dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
-                card_view:cardBackgroundColor="#3c4e57"
-                card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp" >
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:id="@+id/uv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/uv"/>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>-->
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -302,63 +275,63 @@
                 card_view:cardBackgroundColor="#2B2B2B"
                 card_view:cardCornerRadius="4dp"
                 card_view:cardElevation="2dp" >
-                <!-- TODO: card_view:cardBackgroundColor="#457ad1" -->
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     style="?android:buttonBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="4dp">
+                    android:layout_marginBottom="4dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
                     <ToggleButton
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
                         android:id="@+id/ledMain"
                         style="?android:buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="sans-serif-light"
                         android:textOff="@string/ledCentar"
                         android:textOn="@string/ledCentar"
-                        android:fontFamily="sans-serif-light"
-                        android:textSize="45sp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"/>
+                        android:textSize="45sp"/>
 
                     <ToggleButton
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
                         android:id="@+id/ledRight"
                         style="?android:buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="sans-serif-light"
                         android:textOff="@string/ledDesno"
                         android:textOn="@string/ledDesno"
-                        android:fontFamily="sans-serif-light"
-                        android:textSize="45sp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp" />
+                        android:textSize="45sp" />
 
                     <ToggleButton
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
                         android:id="@+id/ledLeft"
                         style="?android:buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="sans-serif-light"
                         android:textOff="@string/ledLevo"
                         android:textOn="@string/ledLevo"
-                        android:fontFamily="sans-serif-light"
-                        android:textSize="45sp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp" />
+                        android:textSize="45sp" />
 
                     <ToggleButton
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
                         android:id="@+id/pc"
                         style="?android:buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="sans-serif-light"
                         android:textOff="@string/pc"
                         android:textOn="@string/pc"
-                        android:fontFamily="sans-serif-light"
-                        android:textSize="45sp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp" />
+                        android:textSize="45sp" />
 
                 </LinearLayout>
 
@@ -371,94 +344,133 @@
                 android:layout_gravity="center"
                 android:layout_marginEnd="15dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 card_view:cardBackgroundColor="#2B2B2B"
                 card_view:cardCornerRadius="4dp"
                 card_view:cardElevation="2dp" >
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/thermalTemp"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/thermalTemp" />
-
-                    <TextView
-                        android:id="@+id/thermalMode"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/thermalMode" />
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="40dp"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center"
+                        android:paddingStart="5dp"
+                        android:text="@string/thermalTemp"
+                        android:textColor="@color/white"
+                        android:textSize="64sp"
+                        tools:ignore="RtlSymmetry" />
 
                     <LinearLayout
+                        android:id="@+id/modeButtons"
+                        style="?android:buttonBarStyle"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="150dp"
+                        android:orientation="horizontal">
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/modeAuto"
-                            android:layout_width="50dp"
+                            style="?android:buttonBarButtonStyle"
+                            android:layout_width="60dp"
                             android:layout_height="50dp"
-                            android:text="A"/>
+                            android:contentDescription="@string/modeAuto"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/mode_1"/>
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/modeManual"
-                            android:layout_width="50dp"
+                            style="?android:buttonBarButtonStyle"
+                            android:layout_width="60dp"
                             android:layout_height="50dp"
-                            android:text="M"/>
+                            android:contentDescription="@string/modeManual"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/mode_2"/>
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/modeDay"
-                            android:layout_width="50dp"
+                            style="?android:buttonBarButtonStyle"
+                            android:layout_width="60dp"
                             android:layout_height="50dp"
-                            android:text="D"/>
+                            android:contentDescription="@string/modeDay"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/mode_3"/>
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/modeNight"
-                            android:layout_width="50dp"
+                            style="?android:buttonBarButtonStyle"
+                            android:layout_width="60dp"
                             android:layout_height="50dp"
-                            android:text="N"/>
+                            android:contentDescription="@string/modeNight"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/mode_4"/>
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/modeFrost"
-                            android:layout_width="50dp"
+                            style="?android:buttonBarButtonStyle"
+                            android:layout_width="60dp"
                             android:layout_height="50dp"
-                            android:text="F"/>
+                            android:contentDescription="@string/modeFrost"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/mode_5"/>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        style="?android:buttonBarStyle"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="?android:buttonBarStyle">
+                        android:layout_below="@+id/modeButtons"
+                        android:gravity="center"
+                        android:background="@color/colorPrimaryDark">
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/thermalIncrement"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/thermalIncrement"
-                            style="?android:buttonBarButtonStyle"/>
+                            style="?android:buttonBarButtonStyle"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/increment"
+                            android:contentDescription="@string/thermalIncrement"
+                            android:scaleType="fitCenter"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp" />
 
-                        <!-- TODO: Replace with ImageButton -->
-                        <Button
+                        <ImageButton
                             android:id="@+id/thermalPower"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="PWR"
-                            style="?android:buttonBarButtonStyle"/>
+                            style="?android:buttonBarButtonStyle"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/power"
+                            android:contentDescription="@string/thermalIncrement"
+                            android:scaleType="fitCenter"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp" />
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/thermalDecrement"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/thermalDecrement"
-                            style="?android:buttonBarButtonStyle"/>
+                            style="?android:buttonBarButtonStyle"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/decrement"
+                            android:contentDescription="@string/thermalIncrement"
+                            android:scaleType="fitCenter"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp" />
 
                     </LinearLayout>
 
-                </LinearLayout>
+                </RelativeLayout>
 
             </android.support.v7.widget.CardView>
 

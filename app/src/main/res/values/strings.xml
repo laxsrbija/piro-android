@@ -30,6 +30,11 @@
     <string name="thermalIncrement" translatable="false">+</string>
     <string name="thermalDecrement" translatable="false">-</string>
     <string name="thermalOff">Isklj.</string>
+    <string name="modeAuto">Autonomni režim</string>
+    <string name="modeManual">Ručni režim</string>
+    <string name="modeDay">Dnevna temperatura</string>
+    <string name="modeNight">Noćna temperatura</string>
+    <string name="modeFrost">Temperatura održavanja</string>
 
     <string name="systemUptime">Operativno vreme:</string>
     <string name="systemTemp">Temperatura servera:</string>

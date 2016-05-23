@@ -1,8 +1,10 @@
 package rs.laxsrbija.piro;
 
 import android.os.AsyncTask;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,6 +16,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 
 /**
  * Created by LAX on 7.4.2016..
@@ -93,7 +96,7 @@ public class PiroLoadDataTask extends AsyncTask<Void, Void, JSONObject> {
                         result.getString("trenutnaTemperatura").concat("°"));
                 PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.currentConditions),
                         result.getString("trenutnaStanje"));
-                /* TODO: Find a place to display UV value
+                /* TODO: Find a place to display a UV value
                 PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.uv),
                         result.getString("uvIndeks"));*/
                 PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.precipitation),
@@ -184,8 +187,25 @@ public class PiroLoadDataTask extends AsyncTask<Void, Void, JSONObject> {
 
             PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.thermalTemp), res);
 
-            PiroLoadDataUIThread.runOnUIThreadTextView(context.findViewById(R.id.thermalMode),
-                    result.getString("rezimPeci"));
+            ArrayList<ImageButton> buttons = new ArrayList<>();
+            buttons.add((ImageButton) context.findViewById(R.id.modeAuto));
+            buttons.add((ImageButton) context.findViewById(R.id.modeManual));
+            buttons.add((ImageButton) context.findViewById(R.id.modeDay));
+            buttons.add((ImageButton) context.findViewById(R.id.modeNight));
+            buttons.add((ImageButton) context.findViewById(R.id.modeFrost));
+
+            for (int i = 0; i < buttons.size(); ++i) {
+                buttons.get(i).setImageDrawable(ResourcesCompat.getDrawable(context.getResources(),
+                        context.getResources().getIdentifier("mode_".concat(Integer.toString(i + 1)),
+                                "drawable", context.getPackageName()), null));
+            }
+
+            if ("1".equals(result.getString("statusPeci"))) {
+                int mode = Integer.valueOf(result.getString("rezimPeci"));
+                buttons.get(mode).setImageDrawable(ResourcesCompat.getDrawable(context.getResources(),
+                        context.getResources().getIdentifier("mode_".concat(Integer.toString(mode + 1)
+                                .concat("_sel")), "drawable", context.getPackageName()), null));
+            }
 
         } catch (JSONException e) {
             e.printStackTrace();
