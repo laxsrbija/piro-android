@@ -29,8 +29,6 @@ public class PiroOnClickListenerSetter {
 
         context.findViewById(R.id.modeAuto)
                 .setOnClickListener(new PiroOnClickListener(piroComms, PiroConstants.THERMAL_MODE_SET.concat("0&m=A"), 1));
-        context.findViewById(R.id.modeManual)
-                .setOnClickListener(new PiroOnClickListener(piroComms, PiroConstants.THERMAL_MODE_SET.concat("1&m=A"), 1));
         context.findViewById(R.id.modeDay)
                 .setOnClickListener(new PiroOnClickListener(piroComms, PiroConstants.THERMAL_MODE_SET.concat("2&m=A"), 1));
         context.findViewById(R.id.modeNight)
