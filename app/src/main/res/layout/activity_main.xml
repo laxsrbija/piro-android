@@ -5,7 +5,7 @@
     android:id="@+id/swipeContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="#1b1b1b"
     android:fillViewport="true" >
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -33,7 +33,7 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="2dp"
-                card_view:cardBackgroundColor="#457ad1"
+                card_view:cardBackgroundColor="#3c4e57"
                 card_view:cardCornerRadius="4dp"
                 card_view:cardElevation="2dp" >
 
@@ -76,10 +76,10 @@
 
                     <ImageView
                         android:id="@+id/currentTemperatureImg"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginEnd="20dp"
                         android:layout_marginTop="10dp"
                         android:contentDescription="@string/currentTemperatureDesc"
                         android:src="@drawable/cloudy" />
@@ -186,7 +186,7 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
-                card_view:cardBackgroundColor="#3c4e57"
+                card_view:cardBackgroundColor="#616161"
                 card_view:cardCornerRadius="4dp"
                 card_view:cardElevation="2dp" >
 
@@ -196,10 +196,10 @@
 
                     <ImageView
                         android:id="@+id/dailyTemperatureImg"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="12dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="15dp"
                         android:contentDescription="@string/dailyTemperatureDesc"
                         android:src="@drawable/cloudy"/>
 
@@ -272,7 +272,7 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
-                card_view:cardBackgroundColor="#2B2B2B"
+                card_view:cardBackgroundColor="#D32F2F"
                 card_view:cardCornerRadius="4dp"
                 card_view:cardElevation="2dp" >
 
@@ -295,7 +295,8 @@
                         android:fontFamily="sans-serif-light"
                         android:textOff="@string/ledCentar"
                         android:textOn="@string/ledCentar"
-                        android:textSize="45sp"/>
+                        android:textSize="45sp"
+                        android:textColor="@color/colorAccent"/>
 
                     <ToggleButton
                         android:id="@+id/ledRight"
@@ -345,7 +346,7 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
-                card_view:cardBackgroundColor="#2B2B2B"
+                card_view:cardBackgroundColor="#FFA000"
                 card_view:cardCornerRadius="4dp"
                 card_view:cardElevation="2dp" >
 
@@ -430,7 +431,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/modeButtons"
                         android:gravity="center"
-                        android:background="@color/colorPrimaryDark">
+                        android:background="#2B2B2B">
 
                         <ImageButton
                             android:id="@+id/thermalIncrement"
