@@ -19,16 +19,16 @@ public class PiroLoadData {
                 null, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(PiroConstants.APP_NAME, "Nije moguće poslati zahtev!");
+                Log.e(PiroContract.APP_NAME, "Nije moguće poslati zahtev!");
             }
         });
     }
 
     public static void loadData(AppCompatActivity context) {
 
-        Log.v(PiroConstants.APP_NAME, "Pokrecem loadData...");
+        Log.v(PiroContract.APP_NAME, "Pokrecem loadData...");
 
-        PiroLoadDataTask loadDataTask = new PiroLoadDataTask(PiroConstants.GET_JSON, context);
+        PiroLoadDataTask loadDataTask = new PiroLoadDataTask(PiroContract.GET_JSON, context);
         loadDataTask.execute();
 
     }

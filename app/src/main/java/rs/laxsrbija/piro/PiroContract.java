@@ -6,7 +6,7 @@ package rs.laxsrbija.piro;
  * Project piro-android
  */
 
-public class PiroConstants {
+public class PiroContract {
 
     public static final String APP_NAME = "PIRO";
 
