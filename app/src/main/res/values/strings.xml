@@ -1,6 +1,6 @@
-<resources>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
 
-    <string name="app_name">PIRO</string>
+    <string name="app_name">PIRO Klijent</string>
 
     <string name="ledCentar">C</string>
     <string name="ledDesno">D</string>
@@ -40,5 +40,39 @@
     <string name="systemTemp">Temperatura servera:</string>
     <string name="systemLoad">Prosečno opterećenje servera:</string>
     <string name="systemUptimeToday">Server je pokrenut danas.</string>
+
+    <!-- Format temperature -->
+    <string name="format_temp" translatable="false"><xliff:g id="temp">%d</xliff:g>°</string>
+    <string name="format_temp_f" translatable="false"><xliff:g id="temp">%.1f</xliff:g>°</string>
+	<string name="format_temp_c" translatable="false"><xliff:g id="temp">%d</xliff:g>°C</string>
+    <string name="format_percent" translatable="false"><xliff:g id="percent">%d</xliff:g>%%</string>
+	
+    <!-- Vrednost koja se prikazuje u slučaju neuspešnog učitavanja podataka -->
+    <string name="not_available" translatable="false">--</string>
+
+    <!-- Ključevi za vrednosti koje se čuvaju u memoriji -->
+    <string name="data_relay_led_center_key" translatable="false">data_relay_led_center</string>
+    <string name="data_relay_led_right_key" translatable="false">data_relay_led_right</string>
+    <string name="data_relay_led_left_key" translatable="false">data_relay_led_left</string>
+    <string name="data_relay_pc_key" translatable="false">data_relay_pc</string>
+    <string name="data_heater_status_key" translatable="false">data_heater_status</string>
+    <string name="data_heater_temp_key" translatable="false">data_heater_temp</string>
+    <string name="data_heater_mode_key" translatable="false">data_heater_mode</string>
+    <string name="data_weather_city_key" translatable="false">data_weather_city</string>
+    <string name="data_weather_current_temp_key" translatable="false">data_weather_current_temp</string>
+    <string name="data_weather_current_conditions_key" translatable="false">data_weather_current_condition</string>
+    <string name="data_weather_current_icon_key" translatable="false">data_weather_current_icon</string>
+    <string name="data_weather_current_precipitation_key" translatable="false">data_weather_current_precipitation</string>
+    <string name="data_weather_current_visibility_key" translatable="false">data_weather_current_visibility</string>
+    <string name="data_weather_current_feels_like_key" translatable="false">data_weather_current_feels_like</string>
+    <string name="data_weather_current_uv_key" translatable="false">data_weather_current_uv</string>
+    <string name="data_weather_day_key" translatable="false">data_weather_day</string>
+    <string name="data_weather_daily_conditions_key" translatable="false">data_weather_daily_conditions</string>
+    <string name="data_weather_daily_high_key" translatable="false">data_weather_daily_high</string>
+    <string name="data_weather_daily_low_key" translatable="false">data_weather_daily_low</string>
+    <string name="data_weather_daily_icon_key" translatable="false">data_weather_daily_icon</string>
+    <string name="data_system_uptime_key" translatable="false">data_system_uptime</string>
+    <string name="data_system_temp_key" translatable="false">data_system_temp</string>
+    <string name="data_system_load_key" translatable="false">data_system_load</string>
 
 </resources>
