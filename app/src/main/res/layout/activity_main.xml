@@ -6,40 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#1b1b1b"
-    android:fillViewport="true" >
+    android:fillViewport="true">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="false">
 
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
+            android:padding="@dimen/activity_vertical_margin"
             android:screenOrientation="portrait"
             tools:context=".MainActivity">
 
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginEnd="15dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="2dp"
                 card_view:cardBackgroundColor="#3c4e57"
                 card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp" >
+                card_view:cardElevation="2dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="155dp" >
+                    android:layout_height="155dp">
 
                     <TextView
                         android:id="@+id/city"
@@ -49,7 +43,7 @@
                         android:layout_marginTop="20dp"
                         android:text="@string/city"
                         android:textColor="@color/white"
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/currentConditions"
@@ -60,7 +54,7 @@
                         android:fontFamily="sans-serif-light"
                         android:text="@string/currentConditions"
                         android:textColor="@color/white"
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/currentTemperature"
@@ -72,7 +66,7 @@
                         android:fontFamily="sans-serif-light"
                         android:text="@string/currentTemperature"
                         android:textColor="@color/white"
-                        android:textSize="48sp"/>
+                        android:textSize="48sp" />
 
                     <ImageView
                         android:id="@+id/currentTemperatureImg"
@@ -103,7 +97,7 @@
                                 android:layout_marginEnd="2dp"
                                 android:layout_marginTop="1dp"
                                 android:contentDescription="@string/weatherRealFeel"
-                                android:src="@drawable/weather_realfeel"/>
+                                android:src="@drawable/weather_realfeel" />
 
                             <TextView
                                 android:id="@+id/feelsLike"
@@ -115,7 +109,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:text="@string/feelsLike"
                                 android:textColor="@color/white"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
@@ -130,7 +124,7 @@
                                 android:layout_marginEnd="2dp"
                                 android:layout_marginTop="2dp"
                                 android:contentDescription="@string/weatherVisibility"
-                                android:src="@drawable/weather_visibility"/>
+                                android:src="@drawable/weather_visibility" />
 
                             <TextView
                                 android:id="@+id/visibility"
@@ -142,7 +136,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:text="@string/visibility"
                                 android:textColor="@color/white"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
@@ -155,7 +149,7 @@
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
                                 android:contentDescription="@string/weatherPrecipitation"
-                                android:src="@drawable/weather_precipitation"/>
+                                android:src="@drawable/weather_precipitation" />
 
                             <TextView
                                 android:id="@+id/precipitation"
@@ -168,7 +162,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:text="@string/precipitation"
                                 android:textColor="@color/white"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
@@ -178,17 +172,14 @@
 
             </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginEnd="15dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="16dp"
                 card_view:cardBackgroundColor="#616161"
                 card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp" >
+                card_view:cardElevation="2dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -201,7 +192,7 @@
                         android:layout_marginStart="25dp"
                         android:layout_marginTop="15dp"
                         android:contentDescription="@string/dailyTemperatureDesc"
-                        android:src="@drawable/cloudy"/>
+                        android:src="@drawable/cloudy" />
 
                     <LinearLayout
                         android:layout_width="150dp"
@@ -217,7 +208,7 @@
                             android:fontFamily="sans-serif"
                             android:text="@string/day"
                             android:textColor="@color/white"
-                            android:textSize="17sp"/>
+                            android:textSize="17sp" />
 
                         <TextView
                             android:id="@+id/dailyConditions"
@@ -226,7 +217,7 @@
                             android:fontFamily="sans-serif-light"
                             android:text="@string/dailyConditions"
                             android:textColor="@color/white"
-                            android:textSize="17sp"/>
+                            android:textSize="17sp" />
 
                     </LinearLayout>
 
@@ -246,7 +237,7 @@
                             android:fontFamily="sans-serif"
                             android:text="@string/dailyMax"
                             android:textColor="@color/white"
-                            android:textSize="17sp"/>
+                            android:textSize="17sp" />
 
                         <TextView
                             android:id="@+id/dailyMin"
@@ -256,7 +247,7 @@
                             android:fontFamily="sans-serif-light"
                             android:text="@string/dailyMin"
                             android:textColor="@color/white"
-                            android:textSize="17sp"/>
+                            android:textSize="17sp" />
 
                     </LinearLayout>
 
@@ -264,17 +255,14 @@
 
             </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginEnd="15dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="16dp"
                 card_view:cardBackgroundColor="#D32F2F"
                 card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp" >
+                card_view:cardElevation="2dp">
 
                 <LinearLayout
                     style="?android:buttonBarStyle"
@@ -282,8 +270,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="4dp"
-                    android:orientation="horizontal"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <ToggleButton
                         android:id="@+id/ledMain"
@@ -293,10 +281,10 @@
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:fontFamily="sans-serif-light"
+                        android:textColor="@color/colorAccent"
                         android:textOff="@string/ledCentar"
                         android:textOn="@string/ledCentar"
-                        android:textSize="45sp"
-                        android:textColor="@color/colorAccent"/>
+                        android:textSize="45sp" />
 
                     <ToggleButton
                         android:id="@+id/ledRight"
@@ -338,17 +326,13 @@
 
             </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="15dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="16dp"
                 card_view:cardBackgroundColor="#FFA000"
                 card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp" >
+                card_view:cardElevation="2dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -385,7 +369,7 @@
                             android:layout_height="50dp"
                             android:contentDescription="@string/modeAuto"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/mode_1"/>
+                            android:src="@drawable/mode_1" />
 
                         <ImageButton
                             android:id="@+id/modeManual"
@@ -394,7 +378,7 @@
                             android:layout_height="50dp"
                             android:contentDescription="@string/modeManual"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/mode_2"/>
+                            android:src="@drawable/mode_2" />
 
                         <ImageButton
                             android:id="@+id/modeDay"
@@ -403,7 +387,7 @@
                             android:layout_height="50dp"
                             android:contentDescription="@string/modeDay"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/mode_3"/>
+                            android:src="@drawable/mode_3" />
 
                         <ImageButton
                             android:id="@+id/modeNight"
@@ -412,7 +396,7 @@
                             android:layout_height="50dp"
                             android:contentDescription="@string/modeNight"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/mode_4"/>
+                            android:src="@drawable/mode_4" />
 
                         <ImageButton
                             android:id="@+id/modeFrost"
@@ -421,7 +405,7 @@
                             android:layout_height="50dp"
                             android:contentDescription="@string/modeFrost"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/mode_5"/>
+                            android:src="@drawable/mode_5" />
 
                     </LinearLayout>
 
@@ -430,8 +414,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/modeButtons"
-                        android:gravity="center"
-                        android:background="#2B2B2B">
+                        android:background="#2B2B2B"
+                        android:gravity="center">
 
                         <ImageButton
                             android:id="@+id/thermalIncrement"
@@ -439,11 +423,11 @@
                             android:layout_width="100dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/increment"
                             android:contentDescription="@string/thermalIncrement"
-                            android:scaleType="fitCenter"
+                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
-                            android:paddingBottom="10dp" />
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/increment" />
 
                         <ImageButton
                             android:id="@+id/thermalPower"
@@ -451,11 +435,11 @@
                             android:layout_width="100dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/power"
                             android:contentDescription="@string/thermalIncrement"
-                            android:scaleType="fitCenter"
+                            android:paddingBottom="8dp"
                             android:paddingTop="8dp"
-                            android:paddingBottom="8dp" />
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/power" />
 
                         <ImageButton
                             android:id="@+id/thermalDecrement"
@@ -463,11 +447,11 @@
                             android:layout_width="100dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/decrement"
                             android:contentDescription="@string/thermalIncrement"
-                            android:scaleType="fitCenter"
+                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
-                            android:paddingBottom="10dp" />
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/decrement" />
 
                     </LinearLayout>
 
@@ -475,23 +459,19 @@
 
             </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 card_view:cardBackgroundColor="#2B2B2B"
                 card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp" >
+                card_view:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/systemUptime"
