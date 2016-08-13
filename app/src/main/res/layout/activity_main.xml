@@ -5,7 +5,7 @@
     android:id="@+id/swipeContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#1b1b1b"
+    android:background="#f5f5f5"
     android:fillViewport="true">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -13,488 +13,264 @@
         android:layout_height="match_parent"
         android:fillViewport="false">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/activity_vertical_margin"
-            android:screenOrientation="portrait"
-            tools:context=".MainActivity">
+            android:orientation="vertical">
 
-            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            <include layout="@layout/layout_weather" />
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                card_view:cardBackgroundColor="#3c4e57"
-                card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp">
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:screenOrientation="portrait"
+                tools:context=".MainActivity">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="155dp">
-
-                    <TextView
-                        android:id="@+id/city"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/city"
-                        android:textColor="@color/white"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/currentConditions"
-                        android:layout_width="230dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginTop="40dp"
-                        android:fontFamily="sans-serif-light"
-                        android:text="@string/currentConditions"
-                        android:textColor="@color/white"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/currentTemperature"
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginStart="25dp"
-                        android:fontFamily="sans-serif-light"
-                        android:text="@string/currentTemperature"
-                        android:textColor="@color/white"
-                        android:textSize="48sp" />
-
-                    <ImageView
-                        android:id="@+id/currentTemperatureImg"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="20dp"
-                        android:layout_marginTop="10dp"
-                        android:contentDescription="@string/currentTemperatureDesc"
-                        android:src="@drawable/cloudy" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginBottom="20dp"
-                        android:orientation="horizontal">
-
-                        <RelativeLayout
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content">
-
-                            <ImageView
-                                android:id="@+id/weatherRealFeel"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginEnd="2dp"
-                                android:layout_marginTop="1dp"
-                                android:contentDescription="@string/weatherRealFeel"
-                                android:src="@drawable/weather_realfeel" />
-
-                            <TextView
-                                android:id="@+id/feelsLike"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="2dp"
-                                android:layout_toEndOf="@id/weatherRealFeel"
-                                android:fontFamily="sans-serif-light"
-                                android:text="@string/feelsLike"
-                                android:textColor="@color/white"
-                                android:textSize="14sp" />
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="75dp"
-                            android:layout_height="wrap_content">
-
-                            <ImageView
-                                android:id="@+id/weatherVisibility"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginEnd="2dp"
-                                android:layout_marginTop="2dp"
-                                android:contentDescription="@string/weatherVisibility"
-                                android:src="@drawable/weather_visibility" />
-
-                            <TextView
-                                android:id="@+id/visibility"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="2dp"
-                                android:layout_toEndOf="@id/weatherVisibility"
-                                android:fontFamily="sans-serif-light"
-                                android:text="@string/visibility"
-                                android:textColor="@color/white"
-                                android:textSize="14sp" />
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content">
-
-                            <ImageView
-                                android:id="@+id/weatherPrecipitation"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:contentDescription="@string/weatherPrecipitation"
-                                android:src="@drawable/weather_precipitation" />
-
-                            <TextView
-                                android:id="@+id/precipitation"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="2dp"
-                                android:layout_marginTop="2dp"
-                                android:layout_toEndOf="@id/weatherPrecipitation"
-                                android:fontFamily="sans-serif-light"
-                                android:text="@string/precipitation"
-                                android:textColor="@color/white"
-                                android:textSize="14sp" />
-
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                card_view:cardBackgroundColor="#616161"
-                card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="75dp">
-
-                    <ImageView
-                        android:id="@+id/dailyTemperatureImg"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginTop="15dp"
-                        android:contentDescription="@string/dailyTemperatureDesc"
-                        android:src="@drawable/cloudy" />
-
-                    <LinearLayout
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="100dp"
-                        android:layout_marginTop="12dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/day"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif"
-                            android:text="@string/day"
-                            android:textColor="@color/white"
-                            android:textSize="17sp" />
-
-                        <TextView
-                            android:id="@+id/dailyConditions"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-light"
-                            android:text="@string/dailyConditions"
-                            android:textColor="@color/white"
-                            android:textSize="17sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="60dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="25dp"
-                        android:layout_marginTop="12dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/dailyMax"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:fontFamily="sans-serif"
-                            android:text="@string/dailyMax"
-                            android:textColor="@color/white"
-                            android:textSize="17sp" />
-
-                        <TextView
-                            android:id="@+id/dailyMin"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:fontFamily="sans-serif-light"
-                            android:text="@string/dailyMin"
-                            android:textColor="@color/white"
-                            android:textSize="17sp" />
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                card_view:cardBackgroundColor="#D32F2F"
-                card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp">
-
-                <LinearLayout
-                    style="?android:buttonBarStyle"
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="4dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ToggleButton
-                        android:id="@+id/ledMain"
-                        style="?android:buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="sans-serif-light"
-                        android:textColor="@color/colorAccent"
-                        android:textOff="@string/ledCentar"
-                        android:textOn="@string/ledCentar"
-                        android:textSize="45sp" />
-
-                    <ToggleButton
-                        android:id="@+id/ledRight"
-                        style="?android:buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="sans-serif-light"
-                        android:textOff="@string/ledDesno"
-                        android:textOn="@string/ledDesno"
-                        android:textSize="45sp" />
-
-                    <ToggleButton
-                        android:id="@+id/ledLeft"
-                        style="?android:buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="sans-serif-light"
-                        android:textOff="@string/ledLevo"
-                        android:textOn="@string/ledLevo"
-                        android:textSize="45sp" />
-
-                    <ToggleButton
-                        android:id="@+id/pc"
-                        style="?android:buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="sans-serif-light"
-                        android:textOff="@string/pc"
-                        android:textOn="@string/pc"
-                        android:textSize="45sp" />
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                card_view:cardBackgroundColor="#FFA000"
-                card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/thermalTemp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="40dp"
-                        android:fontFamily="sans-serif-light"
-                        android:gravity="center"
-                        android:paddingStart="5dp"
-                        android:text="@string/thermalTemp"
-                        android:textColor="@color/white"
-                        android:textSize="64sp"
-                        tools:ignore="RtlSymmetry" />
+                    android:layout_gravity="center"
+                    card_view:cardBackgroundColor="#D32F2F"
+                    card_view:cardCornerRadius="4dp"
+                    card_view:cardElevation="2dp">
 
                     <LinearLayout
-                        android:id="@+id/modeButtons"
                         style="?android:buttonBarStyle"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="150dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
-                        <ImageButton
-                            android:id="@+id/modeAuto"
+                        <ToggleButton
+                            android:id="@+id/ledMain"
                             style="?android:buttonBarButtonStyle"
-                            android:layout_width="60dp"
-                            android:layout_height="50dp"
-                            android:contentDescription="@string/modeAuto"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/mode_1" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="@color/colorAccent"
+                            android:textOff="@string/ledCentar"
+                            android:textOn="@string/ledCentar"
+                            android:textSize="45sp" />
 
-                        <ImageButton
-                            android:id="@+id/modeManual"
+                        <ToggleButton
+                            android:id="@+id/ledRight"
                             style="?android:buttonBarButtonStyle"
-                            android:layout_width="60dp"
-                            android:layout_height="50dp"
-                            android:contentDescription="@string/modeManual"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/mode_2" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:fontFamily="sans-serif-light"
+                            android:textOff="@string/ledDesno"
+                            android:textOn="@string/ledDesno"
+                            android:textSize="45sp" />
 
-                        <ImageButton
-                            android:id="@+id/modeDay"
+                        <ToggleButton
+                            android:id="@+id/ledLeft"
                             style="?android:buttonBarButtonStyle"
-                            android:layout_width="60dp"
-                            android:layout_height="50dp"
-                            android:contentDescription="@string/modeDay"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/mode_3" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:fontFamily="sans-serif-light"
+                            android:textOff="@string/ledLevo"
+                            android:textOn="@string/ledLevo"
+                            android:textSize="45sp" />
 
-                        <ImageButton
-                            android:id="@+id/modeNight"
+                        <ToggleButton
+                            android:id="@+id/pc"
                             style="?android:buttonBarButtonStyle"
-                            android:layout_width="60dp"
-                            android:layout_height="50dp"
-                            android:contentDescription="@string/modeNight"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/mode_4" />
-
-                        <ImageButton
-                            android:id="@+id/modeFrost"
-                            style="?android:buttonBarButtonStyle"
-                            android:layout_width="60dp"
-                            android:layout_height="50dp"
-                            android:contentDescription="@string/modeFrost"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/mode_5" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:fontFamily="sans-serif-light"
+                            android:textOff="@string/pc"
+                            android:textOn="@string/pc"
+                            android:textSize="45sp" />
 
                     </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    card_view:cardBackgroundColor="#FFA000"
+                    card_view:cardCornerRadius="4dp"
+                    card_view:cardElevation="2dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/thermalTemp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="40dp"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="center"
+                            android:paddingStart="5dp"
+                            android:text="@string/thermalTemp"
+                            android:textColor="@color/white"
+                            android:textSize="64sp"
+                            tools:ignore="RtlSymmetry" />
+
+                        <LinearLayout
+                            android:id="@+id/modeButtons"
+                            style="?android:buttonBarStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="150dp"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/modeAuto"
+                                style="?android:buttonBarButtonStyle"
+                                android:layout_width="60dp"
+                                android:layout_height="50dp"
+                                android:contentDescription="@string/modeAuto"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/mode_1" />
+
+                            <ImageButton
+                                android:id="@+id/modeManual"
+                                style="?android:buttonBarButtonStyle"
+                                android:layout_width="60dp"
+                                android:layout_height="50dp"
+                                android:contentDescription="@string/modeManual"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/mode_2" />
+
+                            <ImageButton
+                                android:id="@+id/modeDay"
+                                style="?android:buttonBarButtonStyle"
+                                android:layout_width="60dp"
+                                android:layout_height="50dp"
+                                android:contentDescription="@string/modeDay"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/mode_3" />
+
+                            <ImageButton
+                                android:id="@+id/modeNight"
+                                style="?android:buttonBarButtonStyle"
+                                android:layout_width="60dp"
+                                android:layout_height="50dp"
+                                android:contentDescription="@string/modeNight"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/mode_4" />
+
+                            <ImageButton
+                                android:id="@+id/modeFrost"
+                                style="?android:buttonBarButtonStyle"
+                                android:layout_width="60dp"
+                                android:layout_height="50dp"
+                                android:contentDescription="@string/modeFrost"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/mode_5" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="?android:buttonBarStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/modeButtons"
+                            android:background="#2B2B2B"
+                            android:gravity="center">
+
+                            <ImageButton
+                                android:id="@+id/thermalIncrement"
+                                style="?android:buttonBarButtonStyle"
+                                android:layout_width="100dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/thermalIncrement"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/increment" />
+
+                            <ImageButton
+                                android:id="@+id/thermalPower"
+                                style="?android:buttonBarButtonStyle"
+                                android:layout_width="100dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/thermalIncrement"
+                                android:paddingBottom="8dp"
+                                android:paddingTop="8dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/power" />
+
+                            <ImageButton
+                                android:id="@+id/thermalDecrement"
+                                style="?android:buttonBarButtonStyle"
+                                android:layout_width="100dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/thermalIncrement"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/decrement" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    card_view:cardBackgroundColor="#2B2B2B"
+                    card_view:cardCornerRadius="4dp"
+                    card_view:cardElevation="2dp">
 
                     <LinearLayout
-                        style="?android:buttonBarStyle"
-                        android:layout_width="match_parent"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/modeButtons"
-                        android:background="#2B2B2B"
-                        android:gravity="center">
+                        android:orientation="vertical">
 
-                        <ImageButton
-                            android:id="@+id/thermalIncrement"
-                            style="?android:buttonBarButtonStyle"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="center"
-                            android:contentDescription="@string/thermalIncrement"
-                            android:paddingBottom="10dp"
-                            android:paddingTop="10dp"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/increment" />
+                        <TextView
+                            android:id="@+id/systemUptime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/systemUptime" />
 
-                        <ImageButton
-                            android:id="@+id/thermalPower"
-                            style="?android:buttonBarButtonStyle"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="center"
-                            android:contentDescription="@string/thermalIncrement"
-                            android:paddingBottom="8dp"
-                            android:paddingTop="8dp"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/power" />
+                        <TextView
+                            android:id="@+id/systemTemp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/systemTemp" />
 
-                        <ImageButton
-                            android:id="@+id/thermalDecrement"
-                            style="?android:buttonBarButtonStyle"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="center"
-                            android:contentDescription="@string/thermalIncrement"
-                            android:paddingBottom="10dp"
-                            android:paddingTop="10dp"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/decrement" />
+                        <TextView
+                            android:id="@+id/systemLoad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/systemLoad" />
 
                     </LinearLayout>
 
-                </RelativeLayout>
+                </android.support.v7.widget.CardView>
 
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                card_view:cardBackgroundColor="#2B2B2B"
-                card_view:cardCornerRadius="4dp"
-                card_view:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/systemUptime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/systemUptime" />
-
-                    <TextView
-                        android:id="@+id/systemTemp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/systemTemp" />
-
-                    <TextView
-                        android:id="@+id/systemLoad"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/systemLoad" />
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
+            </LinearLayout>
 
         </LinearLayout>
 

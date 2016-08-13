@@ -1,6 +1,6 @@
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
 
-    <string name="app_name">PIRO Klijent</string>
+    <string name="app_name">PIRO</string>
 
     <string name="ledCentar">C</string>
     <string name="ledDesno">D</string>
@@ -43,6 +43,7 @@
 
     <!-- Format temperature -->
     <string name="format_temp" translatable="false"><xliff:g id="temp">%d</xliff:g>°</string>
+    <string name="format_daily_temp" translatable="false"><xliff:g id="high">%d</xliff:g>° / <xliff:g id="low">%d</xliff:g>°</string>
     <string name="format_temp_f" translatable="false"><xliff:g id="temp">%.1f</xliff:g>°</string>
 	<string name="format_temp_c" translatable="false"><xliff:g id="temp">%d</xliff:g>°C</string>
     <string name="format_percent" translatable="false"><xliff:g id="percent">%d</xliff:g>%%</string>

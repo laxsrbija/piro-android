@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -146,8 +147,6 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
                     json.getInt(PiroContract.JSON.WEATHER_CURRENT_FEELS_LIKE));
             editor.putInt(resources.getString(R.string.data_weather_current_uv_key),
                     json.getInt(PiroContract.JSON.WEATHER_CURRENT_UV));
-            editor.putString(resources.getString(R.string.data_weather_day_key),
-                    json.getString(PiroContract.JSON.WEATHER_DAY));
             editor.putString(resources.getString(R.string.data_weather_daily_conditions_key),
                     json.getString(PiroContract.JSON.WEATHER_DAILY_CONDITIONS));
             editor.putInt(resources.getString(R.string.data_weather_daily_high_key),
@@ -173,6 +172,12 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
         SharedPreferences sharedPref = context.getPreferences(Context.MODE_PRIVATE);
 
         String notAvailable = resources.getString(R.string.not_available);
+
+        String data = sharedPref.getString(context.getString(R.string.data_weather_city_key), null);
+        if (data == null) {
+            Log.v(PiroContract.APP_NAME, "Shared Preferences not set!");
+            return;
+        }
 
         TextView weatherCity = (TextView) context.findViewById(R.id.city);
         weatherCity.setText(sharedPref.getString(context.getString(R.string.data_weather_city_key),
@@ -210,21 +215,14 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
         // TODO Pronaći lokaciju UV indeksa
         // TextView weatherCurrentUvIndex = (TextView) context.findViewById(R.id.
 
-        TextView weatherDay = (TextView) context.findViewById(R.id.day);
-        weatherDay.setText(sharedPref.getString(context.getString(R.string.data_weather_day_key),
-                notAvailable));
-
         TextView weatherDailyConditions = (TextView) context.findViewById(R.id.dailyConditions);
         weatherDailyConditions.setText(sharedPref.getString(
                 context.getString(R.string.data_weather_daily_conditions_key), notAvailable));
 
-        TextView weatherDailyHigh = (TextView) context.findViewById(R.id.dailyMax);
-        weatherDailyHigh.setText(resources.getString(R.string.format_temp,
-                sharedPref.getInt(context.getString(R.string.data_weather_daily_high_key), -1)));
-
-        TextView weatherDailyLow = (TextView) context.findViewById(R.id.dailyMin);
-        weatherDailyLow.setText(resources.getString(R.string.format_temp,
-                sharedPref.getInt(context.getString(R.string.data_weather_daily_low_key), -1)));
+        TextView weatherDailyTemp = (TextView) context.findViewById(R.id.dailyTemperature);
+        int high = sharedPref.getInt(context.getString(R.string.data_weather_daily_high_key), -1);
+        int low = sharedPref.getInt(context.getString(R.string.data_weather_daily_low_key), -1);
+        weatherDailyTemp.setText(resources.getString(R.string.format_daily_temp, high, low));
 
         ImageView weatherDailyIcon = (ImageView) context.findViewById(R.id.dailyTemperatureImg);
         String dailyIcon = sharedPref.getString(context.getString(
@@ -250,6 +248,7 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
 
         heaterHelper(context);
         systemHelper(context);
+        weatherBackgroundHelper(context);
 
         ((SwipeRefreshLayout) context.findViewById(R.id.swipeContainer)).setRefreshing(false);
 
@@ -349,6 +348,7 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
             builder.append(" dan");
 
             // Logika za računanje sufiksa reči "dan"
+            // TODO Napraviti univerzalnu internacionalnu verziju
             if (Integer.parseInt(days) > 0 && (days.charAt(days.length() - 1) != '1'
                     || days.lastIndexOf("11") != -1
                     && days.length() - 2 == days.lastIndexOf("11")))
@@ -370,6 +370,57 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
 
         TextView systemLoad = (TextView) context.findViewById(R.id.systemLoad);
         systemLoad.setText(builder.toString());
+
+    }
+
+    /**
+     * Pomoćna funkcija za postavljanje pozadine vremenske prognoze
+     */
+    private static void weatherBackgroundHelper(Activity context) {
+
+        SharedPreferences sharedPref = context.getPreferences(Context.MODE_PRIVATE);
+        ImageView background = (ImageView) context.findViewById(R.id.weather_background);
+
+        String conditions = sharedPref.getString(
+                context.getString(R.string.data_weather_current_icon_key), null);
+
+        if (conditions == null)
+            return;
+
+        if (conditions.equals("clear") || conditions.equals("sunny")
+                || conditions.equals("mostlysunny") || conditions.equals("sunny")) {
+            Glide.with(context).load(R.drawable.w_clear).into(background);
+        } else if (conditions.equals("mostlycloudy") || conditions.equals("partlycloudy")
+                || conditions.equals("partlysunny")) {
+            Glide.with(context).load(R.drawable.w_mostlysunny).into(background);
+        } else if (conditions.equals("cloudy") || conditions.equals("nt_cloudy")
+                || conditions.equals("chancetstorms")) {
+            Glide.with(context).load(R.drawable.w_cloudy).into(background);
+        } else if (conditions.equals("fog") || conditions.equals("hazy")
+                || conditions.equals("nt_fog") || conditions.equals("nt_hazy")) {
+            Glide.with(context).load(R.drawable.w_fog).into(background);
+        } else if (conditions.equals("nt_clear") || conditions.equals("nt_sunny")
+                || conditions.equals("nt_mostlysunny") || conditions.equals("nt_partlysunny")) {
+            Glide.with(context).load(R.drawable.w_nt_clear).into(background);
+        } else if (conditions.equals("nt_partlycloudy") || conditions.equals("nt_mostlycloudy")) {
+            Glide.with(context).load(R.drawable.w_nt_cloudy).into(background);
+        } else if (conditions.equals("chancerain") || conditions.equals("nt_rain")
+                || conditions.equals("nt_chancerain") || conditions.equals("rain")) {
+            Glide.with(context).load(R.drawable.w_rain).into(background);
+        } else if (conditions.equals("chanceflurries") || conditions.equals("chancesleet")
+                || conditions.equals("chancesnow") || conditions.equals("flurries")
+                || conditions.equals("nt_chanceflurries") || conditions.equals("nt_chancesleet")
+                || conditions.equals("nt_flurries") || conditions.equals("nt_snow")
+                || conditions.equals("snow") || conditions.equals("sleet")
+                || conditions.equals("nt_sleet")) {
+            Glide.with(context).load(R.drawable.w_snow).into(background);
+        } else if (conditions.equals("nt_chancetstorms") || conditions.equals("nt_tstorms")
+                || conditions.equals("tstorms")) {
+            Glide.with(context).load(R.drawable.w_tstorms).into(background);
+        } else {
+            Log.e(PiroContract.APP_NAME, "Unable to assign background: " + conditions);
+        }
+
 
     }
 
