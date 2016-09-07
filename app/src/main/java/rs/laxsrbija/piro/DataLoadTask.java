@@ -10,6 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,6 +40,11 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
     public static final String MODE_REGULAR = "android";
     public static final String MODE_FORCE = "force";
 
+    // Statusi u kojima se može naći peć
+    public static final int HEATING_STATUS_ON = 1;
+    public static final int HEATING_STATUS_OFF = 0;
+    public static final int HEATING_STATUS_DISABLED = -1;
+
     private Activity mContext;
     private String mRequestType;
 
@@ -50,13 +56,8 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... params) {
 
-        Uri.Builder builder = new Uri.Builder();
-        builder.scheme(PiroContract.SERVER_SCHEME)
-                .authority(PiroContract.SERVER_ADDRESS2)
-                .appendPath(PiroContract.PIRO_DIR)
-                .appendPath(PiroContract.QUERY_DIR)
-                .appendPath(PiroContract.QUERY_TARGET)
-                .appendQueryParameter(PiroContract.FUNCTION, PiroContract.GET_JSON_FUNCTION)
+        Uri.Builder builder = PiroContract.buildPreliminaryURI();
+        builder.appendQueryParameter(PiroContract.FUNCTION, PiroContract.GET_JSON_FUNCTION)
                 .appendQueryParameter(PiroContract.ARGUMENT, mRequestType)
                 .build();
 
@@ -277,25 +278,33 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
 
         String temperature;
         int status = sharedPref.getInt(context.getString(R.string.data_heater_status_key), -1);
-        if (status == 1) {
+
+        TextView heaterTemp = (TextView) context.findViewById(R.id.thermalTemp);
+        ImageView heaterTempIV = (ImageView) context.findViewById(R.id.thermalTempImageView);
+
+        if ((status == HEATING_STATUS_ON || status == HEATING_STATUS_OFF)
+                && heaterTemp.getVisibility() == View.GONE) {
+            heaterTemp.setVisibility(View.VISIBLE);
+            heaterTempIV.setVisibility(View.GONE);
+        }
+
+        if (status == HEATING_STATUS_ON) {
             float tmp = sharedPref.getFloat(context.getString(R.string.data_heater_temp_key), -1);
 
             if (tmp == Math.ceil(tmp)) {
                 temperature = resources.getString(R.string.format_temp,
-                        sharedPref.getFloat(context.getString(R.string.data_heater_temp_key), -1));
+                        (int)sharedPref.getFloat(context.getString(R.string.data_heater_temp_key), -1));
             } else {
                 temperature = resources.getString(R.string.format_temp_f,
                         sharedPref.getFloat(context.getString(R.string.data_heater_temp_key), -1));
             }
-        } else if (status == 0) {
-            temperature = resources.getString(R.string.thermalOff);
-        } else {
-            // TODO Prikazati odgovarajuće elemente kada peć nije povezana
-            temperature = "N/P";
+            heaterTemp.setText(temperature);
+        } else if (status == HEATING_STATUS_OFF) {
+            heaterTemp.setText(resources.getString(R.string.thermalOff));
+        } else if (status == HEATING_STATUS_DISABLED && heaterTemp.getVisibility() == View.VISIBLE) {
+            heaterTemp.setVisibility(View.GONE);
+            heaterTempIV.setVisibility(View.VISIBLE);
         }
-
-        TextView heaterTemp = (TextView) context.findViewById(R.id.thermalTemp);
-        heaterTemp.setText(temperature);
 
         ArrayList<ImageButton> buttons = new ArrayList<>();
         buttons.add((ImageButton) context.findViewById(R.id.modeAuto));

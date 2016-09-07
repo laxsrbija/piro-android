@@ -126,6 +126,15 @@
                             android:textSize="64sp"
                             tools:ignore="RtlSymmetry" />
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:id="@+id/thermalTempImageView"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:src="@drawable/heating_unavailable" />
+
                         <LinearLayout
                             android:id="@+id/modeButtons"
                             style="?android:buttonBarStyle"

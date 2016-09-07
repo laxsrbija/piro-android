@@ -1,5 +1,7 @@
 package rs.laxsrbija.piro;
 
+import android.net.Uri;
+
 /**
  * Konstante koje projekat koristi
  * Created by LAX on 8.2.2016.
@@ -19,6 +21,21 @@ public class PiroContract {
     public static final String ARGUMENT = "arg";
 
     public static final String GET_JSON_FUNCTION = "getJSON";
+
+    public static final String RELAY_TOGGLE_FUNCTION = "toggleRelay";
+    public static final String PC_TOGGLE_FUNCTION = "togglePC";
+    public static final String ARG_LED_RIGHT = "1";
+    public static final String ARG_LED_CENTER = "0";
+    public static final String ARG_LED_LEFT = "2";
+
+    public static final String HEATING_TOGGLE_FUNCTION = "toggleThermal";
+    public static final String HEATING_INCREMENT = "increment";
+    public static final String HEATING_DECREMENT = "decrement";
+    public static final String HEATING_MODE = "setMode";
+    public static final String ARG_MODE_AUTO = "0";
+    public static final String ARG_MODE_DAY = "2";
+    public static final String ARG_MODE_NIGHT = "3";
+    public static final String ARG_MODE_FROST = "4";
 
     public static class JSON {
 
@@ -49,6 +66,16 @@ public class PiroContract {
         public static final String SYSTEM_LOAD = "systemLoad";
         public static final String SYSTEM_TEMP = "systemTemperature";
 
+    }
+
+    public static Uri.Builder buildPreliminaryURI() {
+        Uri.Builder builder = new Uri.Builder();
+        builder.scheme(PiroContract.SERVER_SCHEME)
+                .authority(PiroContract.SERVER_ADDRESS2)
+                .appendPath(PiroContract.PIRO_DIR)
+                .appendPath(PiroContract.QUERY_DIR)
+                .appendPath(PiroContract.QUERY_TARGET);
+        return builder;
     }
 
 }
