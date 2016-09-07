@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         new DataLoadTask(this, DataLoadTask.MODE_REGULAR).execute();
 
         ((SwipeRefreshLayout) findViewById(R.id.swipeContainer)).setOnRefreshListener(this);
+        PiroOnClickListener.setOnClickListener(this);
 
     }
 
