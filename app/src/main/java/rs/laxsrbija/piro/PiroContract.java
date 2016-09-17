@@ -1,6 +1,11 @@
 package rs.laxsrbija.piro;
 
+import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
+import android.net.wifi.SupplicantState;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 
 /**
  * Konstante koje projekat koristi
@@ -13,7 +18,21 @@ public class PiroContract {
     public static final String APP_NAME = "PIRO";
 
     public static final String SERVER_SCHEME = "http";
-    public static final String SERVER_ADDRESS2 = "192.168.1.2";
+
+    /*
+        Kako modem koji koristim ne može da se sa lokalne mreže poveže na svoju eksternu adresu (i obrnuto),
+        neophodno je proveriti da li je uređaj povezan na lokalnu mrežu, ili ne. Ukliko jeste,
+        koristi se lokalna IP, a u suprotnom eksterna.
+
+        Ako server na kome se sistem nalazi nema ovu restrikciju,
+        postaviti zastavicu ispod na 'false' i koristiti samo globalnu adresu.
+        U suprotnom, neophodno je definisati i SSID Wifi mreže.
+     */
+    public static final boolean SEPARATE_LOCAL_AND_EXTERNAL_IP = true;
+    public static final String SSID = "<WIFI SSID>";
+    public static final String SERVER_ADDRESS_INTERNAL = "<INTERNAL ADDRESS>";
+    public static final String SERVER_ADDRESS_EXTERNAL = "<EXTERNAL ADDRESS>";
+
     public static final String PIRO_DIR = "piro";
     public static final String QUERY_DIR = "rpi";
     public static final String QUERY_TARGET ="piro-query.php";
@@ -68,14 +87,37 @@ public class PiroContract {
 
     }
 
-    public static Uri.Builder buildPreliminaryURI() {
+    public static Uri.Builder buildPreliminaryURI(Activity activity) {
         Uri.Builder builder = new Uri.Builder();
-        builder.scheme(PiroContract.SERVER_SCHEME)
-                .authority(PiroContract.SERVER_ADDRESS2)
-                .appendPath(PiroContract.PIRO_DIR)
-                .appendPath(PiroContract.QUERY_DIR)
-                .appendPath(PiroContract.QUERY_TARGET);
+        builder.scheme(SERVER_SCHEME)
+                .authority(getServerAddress(activity))
+                .appendPath(PIRO_DIR)
+                .appendPath(QUERY_DIR)
+                .appendPath(QUERY_TARGET);
         return builder;
+    }
+
+    public static String getServerAddress(Activity activity) {
+
+        if (!SEPARATE_LOCAL_AND_EXTERNAL_IP) {
+            return SERVER_ADDRESS_EXTERNAL;
+        }
+
+        WifiManager wifiManager = (WifiManager) activity.getSystemService(Context.WIFI_SERVICE);
+        WifiInfo wifiInfo;
+
+        wifiInfo = wifiManager.getConnectionInfo();
+        if (wifiInfo.getSupplicantState() == SupplicantState.COMPLETED) {
+            String ssid = wifiInfo.getSSID();
+//            Log.v("PIRO", "Wifi SSID: " + ssid);
+
+            if (ssid != null && ssid.contains(SSID))
+                return SERVER_ADDRESS_INTERNAL;
+        }
+
+//        Log.v("PIRO", "Wifi not connected");
+        return SERVER_ADDRESS_EXTERNAL;
+
     }
 
 }

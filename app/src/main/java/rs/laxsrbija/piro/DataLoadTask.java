@@ -56,7 +56,7 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... params) {
 
-        Uri.Builder builder = PiroContract.buildPreliminaryURI();
+        Uri.Builder builder = PiroContract.buildPreliminaryURI(mContext);
         builder.appendQueryParameter(PiroContract.FUNCTION, PiroContract.GET_JSON_FUNCTION)
                 .appendQueryParameter(PiroContract.ARGUMENT, mRequestType)
                 .build();
@@ -77,6 +77,8 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
         return null;
 
     }
+
+
 
     private Response.Listener<JSONObject> listener = new Response.Listener<JSONObject>() {
         @Override

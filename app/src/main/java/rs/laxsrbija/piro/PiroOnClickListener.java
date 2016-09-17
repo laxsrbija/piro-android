@@ -22,7 +22,7 @@ public class PiroOnClickListener implements View.OnClickListener {
     public PiroOnClickListener(Activity context, String function) {
         this.context = context;
         this.function = function;
-        this.builder = PiroContract.buildPreliminaryURI();
+        this.builder = PiroContract.buildPreliminaryURI(context);
         this.argument = null;
     }
 
@@ -30,7 +30,7 @@ public class PiroOnClickListener implements View.OnClickListener {
         this.context = context;
         this.function = function;
         this.argument = argument;
-        this.builder = PiroContract.buildPreliminaryURI();
+        this.builder = PiroContract.buildPreliminaryURI(context);
     }
 
     @Override
