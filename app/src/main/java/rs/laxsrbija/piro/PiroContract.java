@@ -30,9 +30,9 @@ public class PiroContract {
         U suprotnom, neophodno je definisati i SSID Wifi mreže.
      */
     public static final boolean SEPARATE_LOCAL_AND_EXTERNAL_IP = true;
-    public static final String SSID = "<WIFI SSID>";
-    public static final String SERVER_ADDRESS_INTERNAL = "<INTERNAL ADDRESS>";
-    public static final String SERVER_ADDRESS_EXTERNAL = "<EXTERNAL ADDRESS>";
+    public static final String SSID = "PAROV STELAR";
+    public static final String SERVER_ADDRESS_INTERNAL = "192.168.1.2";
+    public static final String SERVER_ADDRESS_EXTERNAL = "piro.ddns.net";
 
     public static final String PIRO_DIR = "piro";
     public static final String QUERY_DIR = "rpi";
@@ -59,9 +59,9 @@ public class PiroContract {
 
     public static class JSON {
 
-        public static final String RELAY_LED_CENTER = "ledCentar";
-        public static final String RELAY_LED_RIGHT = "ledDesno";
-        public static final String RELAY_LED_LEFT = "ledLevo";
+        public static final String RELAY_LED_CENTER = "led_centar";
+        public static final String RELAY_LED_RIGHT = "led_desno";
+        public static final String RELAY_LED_LEFT = "led_levo";
         public static final String RELAY_PC = "racunar";
 
         public static final String HEATER_STATUS = "statusPeci";
@@ -82,8 +82,8 @@ public class PiroContract {
         public static final String WEATHER_DAILY_LOW = "dnevnaMin";
         public static final String WEATHER_DAILY_ICON = "dnevnaIkona";
 
-        public static final String SYSTEM_UPTIME = "systemUptime";
-        public static final String SYSTEM_LOAD = "systemLoad";
+        public static final String SYSTEM_UPTIME = "system_uptime";
+        public static final String SYSTEM_LOAD = "system_load";
         public static final String SYSTEM_TEMP = "systemTemperature";
 
     }

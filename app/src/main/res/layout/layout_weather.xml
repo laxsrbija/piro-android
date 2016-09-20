@@ -16,6 +16,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/weather_background_desc"
             android:alpha="0.35"/>
 
         <TextView
@@ -24,7 +25,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="20dp"
-            android:text="@string/city"
             android:textColor="@color/white"
             android:textSize="17sp" />
 
@@ -35,7 +35,6 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="40dp"
             android:fontFamily="sans-serif-light"
-            android:text="@string/currentConditions"
             android:textColor="@color/white"
             android:textSize="17sp" />
 
@@ -47,7 +46,6 @@
             android:layout_marginBottom="10dp"
             android:layout_marginStart="25dp"
             android:fontFamily="sans-serif-light"
-            android:text="@string/currentTemperature"
             android:textColor="@color/white"
             android:textSize="48sp" />
 
@@ -58,8 +56,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="10dp"
-            android:contentDescription="@string/currentTemperatureDesc"
-            android:src="@drawable/cloudy" />
+            android:contentDescription="@string/current_temperature_desc" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -79,7 +76,7 @@
                     android:layout_height="20dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginTop="1dp"
-                    android:contentDescription="@string/weatherRealFeel"
+                    android:contentDescription="@string/weather_real_feel"
                     android:src="@drawable/weather_realfeel" />
 
                 <TextView
@@ -90,7 +87,6 @@
                     android:layout_marginTop="2dp"
                     android:layout_toEndOf="@id/weatherRealFeel"
                     android:fontFamily="sans-serif-light"
-                    android:text="@string/feelsLike"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 
@@ -106,7 +102,7 @@
                     android:layout_height="20dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginTop="2dp"
-                    android:contentDescription="@string/weatherVisibility"
+                    android:contentDescription="@string/weather_visibility"
                     android:src="@drawable/weather_visibility" />
 
                 <TextView
@@ -117,7 +113,6 @@
                     android:layout_marginTop="2dp"
                     android:layout_toEndOf="@id/weatherVisibility"
                     android:fontFamily="sans-serif-light"
-                    android:text="@string/visibility"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 
@@ -131,7 +126,7 @@
                     android:id="@+id/weatherPrecipitation"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:contentDescription="@string/weatherPrecipitation"
+                    android:contentDescription="@string/weather_precipitation"
                     android:src="@drawable/weather_precipitation" />
 
                 <TextView
@@ -143,7 +138,6 @@
                     android:layout_marginTop="1dp"
                     android:layout_toEndOf="@id/weatherPrecipitation"
                     android:fontFamily="sans-serif-light"
-                    android:text="@string/precipitation"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 
@@ -167,27 +161,29 @@
             android:layout_height="wrap_content"
             android:paddingStart="8dp"
             android:paddingEnd="13dp">
+
             <ImageView
                 android:id="@+id/dailyTemperatureImg"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:contentDescription="@string/dailyTemperatureDesc"
-                android:src="@drawable/cloudy"/>
+                android:contentDescription="@string/daily_temperature_desc" />
+
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">
+
             <TextView
                 android:id="@+id/dailyConditions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:text="Mestimično oblačno"
                 android:textColor="#212121"
                 android:textSize="17sp" />
+
         </FrameLayout>
 
         <FrameLayout
@@ -195,14 +191,15 @@
             android:layout_height="wrap_content"
             android:paddingStart="8dp"
             android:paddingEnd="8dp">
+
             <TextView
                 android:id="@+id/dailyTemperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
-                android:text="21° / 5°"
                 android:textColor="#212121"
                 android:textSize="17sp"/>
+
         </FrameLayout>
 
     </LinearLayout>

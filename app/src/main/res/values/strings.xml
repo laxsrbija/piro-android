@@ -5,44 +5,31 @@
     <string name="menu_settings">Podešavanja</string>
     <string name="menu_about">O aplikaciji</string>
 
-    <string name="ledCentar">C</string>
-    <string name="ledDesno">D</string>
-    <string name="ledLevo">L</string>
+    <string name="led_centar">C</string>
+    <string name="led_desno">D</string>
+    <string name="led_levo">L</string>
     <string name="pc">R</string>
 
-    <string name="city" translatable="false">N/A</string>
-    <string name="day" translatable="false">N/A</string>
+    <string name="weather_background_desc">Trenutni uslovi</string>
+    <string name="current_temperature_desc">Trenutni uslovi</string>
+    <string name="daily_temperature_desc">Dnevni uslovi</string>
+    <string name="weather_visibility">Vidljivost</string>
+    <string name="weather_real_feel">Subjektivni osećaj</string>
+    <string name="weather_precipitation">Mogućnost padavina</string>
 
-    <string name="currentTemperature" translatable="false">N/A</string>
-    <string name="currentTemperatureDesc">Trenutni uslovi</string>
-    <string name="dailyTemperatureDesc">Dnevni uslovi</string>
-    <string name="currentConditions" translatable="false">N/A</string>
-    <string name="uv" translatable="false">N/A</string>
-    <string name="weatherVisibility">Vidljivost</string>
-    <string name="visibility" translatable="false">N/A</string>
-    <string name="weatherRealFeel">Subjektivni osećaj</string>
-    <string name="feelsLike" translatable="false">N/A</string>
-    <string name="weatherPrecipitation">Mogućnost padavina</string>
-    <string name="precipitation" translatable="false">N/A</string>
-    <string name="dailyMax" translatable="false">N/A</string>
-    <string name="dailyMin" translatable="false">N/A</string>
-    <string name="dailyConditions" translatable="false">N/A</string>
+    <string name="thermal_increment" translatable="false">+</string>
+    <string name="thermal_decrement" translatable="false">-</string>
+    <string name="thermal_off">Isklj.</string>
+    <string name="mode_auto">Autonomni režim</string>
+    <string name="mode_manual">Ručni režim</string>
+    <string name="mode_day">Dnevna temperatura</string>
+    <string name="mode_night">Noćna temperatura</string>
+    <string name="mode_frost">Temperatura održavanja</string>
 
-    <string name="thermalTemp" translatable="false">N/A</string>
-    <string name="thermalMode" translatable="false">N/A</string>
-    <string name="thermalIncrement" translatable="false">+</string>
-    <string name="thermalDecrement" translatable="false">-</string>
-    <string name="thermalOff">Isklj.</string>
-    <string name="modeAuto">Autonomni režim</string>
-    <string name="modeManual">Ručni režim</string>
-    <string name="modeDay">Dnevna temperatura</string>
-    <string name="modeNight">Noćna temperatura</string>
-    <string name="modeFrost">Temperatura održavanja</string>
-
-    <string name="systemUptime">Operativno vreme:</string>
-    <string name="systemTemp">Temperatura servera:</string>
-    <string name="systemLoad">Prosečno opterećenje servera:</string>
-    <string name="systemUptimeToday">Server je pokrenut danas.</string>
+    <string name="system_uptime">Operativno vreme:</string>
+    <string name="system_temp">Temperatura servera:</string>
+    <string name="system_load">Prosečno opterećenje servera:</string>
+    <string name="system_uptime_today">Server je pokrenut danas.</string>
 
     <!-- Format temperature -->
     <string name="format_temp" translatable="false"><xliff:g id="temp">%d</xliff:g>°</string>

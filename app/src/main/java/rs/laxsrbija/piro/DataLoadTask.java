@@ -222,8 +222,12 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
         ImageView weatherCurrentIcon = (ImageView) context.findViewById(R.id.currentTemperatureImg);
         String currentIcon = sharedPref.getString(context.getString(
                 R.string.data_weather_current_icon_key), null);
-        Glide.with(context).load(resources.getIdentifier(
-                currentIcon, "drawable", context.getPackageName())).into(weatherCurrentIcon);
+        try {
+            Glide.with(context).load(resources.getIdentifier(
+                    currentIcon, "drawable", context.getPackageName())).into(weatherCurrentIcon);
+        } catch (IllegalArgumentException e) {
+            Log.e(PiroContract.APP_NAME, "Nije moguće učitati sliku, aktivnost je uništena.");
+        }
 
         TextView weatherCurrentPrecipitation = (TextView) context.findViewById(R.id.precipitation);
         String precipitation = resources.getString(R.string.format_percent,
@@ -255,8 +259,12 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
         ImageView weatherDailyIcon = (ImageView) context.findViewById(R.id.dailyTemperatureImg);
         String dailyIcon = sharedPref.getString(context.getString(
                 R.string.data_weather_daily_icon_key), null);
-        Glide.with(context).load(resources.getIdentifier(
-                dailyIcon, "drawable", context.getPackageName())).into(weatherDailyIcon);
+        try {
+            Glide.with(context).load(resources.getIdentifier(
+                    dailyIcon, "drawable", context.getPackageName())).into(weatherDailyIcon);
+        } catch (IllegalArgumentException e) {
+            Log.e(PiroContract.APP_NAME, "Nije moguće učitati sliku, aktivnost je uništena.");
+        }
 
         ToggleButton relayLedCenter = (ToggleButton) context.findViewById(R.id.ledMain);
         relayLedCenter.setTextColor(getToggleButtonColor(context,
@@ -327,7 +335,7 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
             }
             heaterTemp.setText(temperature);
         } else if (status == HEATING_STATUS_OFF) {
-            heaterTemp.setText(resources.getString(R.string.thermalOff));
+            heaterTemp.setText(resources.getString(R.string.thermal_off));
         } else if (status == HEATING_STATUS_DISABLED && heaterTemp.getVisibility() == View.VISIBLE) {
             heaterTemp.setVisibility(View.GONE);
             heaterTempIV.setVisibility(View.VISIBLE);
@@ -364,7 +372,7 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
         SharedPreferences sharedPref = context.getPreferences(Context.MODE_PRIVATE);
 
         StringBuilder builder = new StringBuilder();
-        builder.append(resources.getString(R.string.systemTemp));
+        builder.append(resources.getString(R.string.system_temp));
         builder.append(" ");
         builder.append(resources.getString(R.string.format_temp,
                 sharedPref.getInt(context.getString(R.string.data_system_temp_key), -1)));
@@ -374,11 +382,11 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
 
         String days = String.valueOf(sharedPref.getInt(
                 context.getString(R.string.data_system_uptime_key), -1));
-        String param = resources.getString(R.string.systemUptimeToday);
+        String param = resources.getString(R.string.system_uptime_today);
         if (Integer.parseInt(days) > 0) {
             builder = new StringBuilder();
 
-            builder.append(resources.getString(R.string.systemUptime));
+            builder.append(resources.getString(R.string.system_uptime));
             builder.append(" ");
             builder.append(days);
             builder.append(" dan");
@@ -398,7 +406,7 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
 
         builder = new StringBuilder();
 
-        builder.append(resources.getString(R.string.systemLoad));
+        builder.append(resources.getString(R.string.system_load));
         builder.append(" ");
         builder.append(resources.getString(R.string.format_percent,
                 sharedPref.getInt(context.getString(

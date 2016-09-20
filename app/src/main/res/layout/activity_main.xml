@@ -62,8 +62,8 @@
                                 android:layout_marginStart="8dp"
                                 android:fontFamily="sans-serif-light"
                                 android:textColor="@color/colorAccent"
-                                android:textOff="@string/ledCentar"
-                                android:textOn="@string/ledCentar"
+                                android:textOff="@string/led_centar"
+                                android:textOn="@string/led_centar"
                                 android:textSize="45sp" />
 
                             <ToggleButton
@@ -74,8 +74,8 @@
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginStart="8dp"
                                 android:fontFamily="sans-serif-light"
-                                android:textOff="@string/ledDesno"
-                                android:textOn="@string/ledDesno"
+                                android:textOff="@string/led_desno"
+                                android:textOn="@string/led_desno"
                                 android:textSize="45sp" />
 
                             <ToggleButton
@@ -86,8 +86,8 @@
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginStart="8dp"
                                 android:fontFamily="sans-serif-light"
-                                android:textOff="@string/ledLevo"
-                                android:textOn="@string/ledLevo"
+                                android:textOff="@string/led_levo"
+                                android:textOn="@string/led_levo"
                                 android:textSize="45sp" />
 
                             <ToggleButton
@@ -127,7 +127,6 @@
                                 android:fontFamily="sans-serif-light"
                                 android:gravity="center"
                                 android:paddingStart="5dp"
-                                android:text="@string/thermalTemp"
                                 android:textColor="@color/white"
                                 android:textSize="64sp"
                                 tools:ignore="RtlSymmetry" />
@@ -156,7 +155,7 @@
                                     style="?android:buttonBarButtonStyle"
                                     android:layout_width="60dp"
                                     android:layout_height="50dp"
-                                    android:contentDescription="@string/modeAuto"
+                                    android:contentDescription="@string/mode_auto"
                                     android:scaleType="fitCenter"
                                     android:src="@drawable/mode_1" />
 
@@ -165,7 +164,7 @@
                                     style="?android:buttonBarButtonStyle"
                                     android:layout_width="60dp"
                                     android:layout_height="50dp"
-                                    android:contentDescription="@string/modeManual"
+                                    android:contentDescription="@string/mode_manual"
                                     android:scaleType="fitCenter"
                                     android:src="@drawable/mode_2" />
 
@@ -174,7 +173,7 @@
                                     style="?android:buttonBarButtonStyle"
                                     android:layout_width="60dp"
                                     android:layout_height="50dp"
-                                    android:contentDescription="@string/modeDay"
+                                    android:contentDescription="@string/mode_day"
                                     android:scaleType="fitCenter"
                                     android:src="@drawable/mode_3" />
 
@@ -183,7 +182,7 @@
                                     style="?android:buttonBarButtonStyle"
                                     android:layout_width="60dp"
                                     android:layout_height="50dp"
-                                    android:contentDescription="@string/modeNight"
+                                    android:contentDescription="@string/mode_night"
                                     android:scaleType="fitCenter"
                                     android:src="@drawable/mode_4" />
 
@@ -192,7 +191,7 @@
                                     style="?android:buttonBarButtonStyle"
                                     android:layout_width="60dp"
                                     android:layout_height="50dp"
-                                    android:contentDescription="@string/modeFrost"
+                                    android:contentDescription="@string/mode_frost"
                                     android:scaleType="fitCenter"
                                     android:src="@drawable/mode_5" />
 
@@ -212,7 +211,7 @@
                                     android:layout_width="100dp"
                                     android:layout_height="50dp"
                                     android:layout_gravity="center"
-                                    android:contentDescription="@string/thermalIncrement"
+                                    android:contentDescription="@string/thermal_increment"
                                     android:paddingBottom="10dp"
                                     android:paddingTop="10dp"
                                     android:scaleType="fitCenter"
@@ -224,7 +223,7 @@
                                     android:layout_width="100dp"
                                     android:layout_height="50dp"
                                     android:layout_gravity="center"
-                                    android:contentDescription="@string/thermalIncrement"
+                                    android:contentDescription="@string/thermal_increment"
                                     android:paddingBottom="8dp"
                                     android:paddingTop="8dp"
                                     android:scaleType="fitCenter"
@@ -236,7 +235,7 @@
                                     android:layout_width="100dp"
                                     android:layout_height="50dp"
                                     android:layout_gravity="center"
-                                    android:contentDescription="@string/thermalIncrement"
+                                    android:contentDescription="@string/thermal_increment"
                                     android:paddingBottom="10dp"
                                     android:paddingTop="10dp"
                                     android:scaleType="fitCenter"
@@ -266,20 +265,20 @@
                                 android:id="@+id/systemUptime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/systemUptime" />
+                                android:text="@string/system_uptime" />
 
                             <TextView
                                 android:id="@+id/systemTemp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/systemTemp" />
+                                android:text="@string/system_temp" />
 
                             <TextView
                                 android:id="@+id/systemLoad"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
-                                android:text="@string/systemLoad" />
+                                android:text="@string/system_load" />
 
                         </LinearLayout>
 
