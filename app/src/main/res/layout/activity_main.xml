@@ -157,8 +157,7 @@
                                     android:layout_width="60dp"
                                     android:layout_height="50dp"
                                     android:contentDescription="@string/mode_auto"
-                                    android:scaleType="fitCenter"
-                                    android:src="@drawable/mode_1" />
+                                    android:scaleType="center" />
 
                                 <ImageButton
                                     android:id="@+id/modeManual"
@@ -166,8 +165,7 @@
                                     android:layout_width="60dp"
                                     android:layout_height="50dp"
                                     android:contentDescription="@string/mode_manual"
-                                    android:scaleType="fitCenter"
-                                    android:src="@drawable/mode_2" />
+                                    android:scaleType="center" />
 
                                 <ImageButton
                                     android:id="@+id/modeDay"
@@ -175,8 +173,7 @@
                                     android:layout_width="60dp"
                                     android:layout_height="50dp"
                                     android:contentDescription="@string/mode_day"
-                                    android:scaleType="fitCenter"
-                                    android:src="@drawable/mode_3" />
+                                    android:scaleType="center" />
 
                                 <ImageButton
                                     android:id="@+id/modeNight"
@@ -184,8 +181,7 @@
                                     android:layout_width="60dp"
                                     android:layout_height="50dp"
                                     android:contentDescription="@string/mode_night"
-                                    android:scaleType="fitCenter"
-                                    android:src="@drawable/mode_4" />
+                                    android:scaleType="center" />
 
                                 <ImageButton
                                     android:id="@+id/modeFrost"
@@ -193,8 +189,7 @@
                                     android:layout_width="60dp"
                                     android:layout_height="50dp"
                                     android:contentDescription="@string/mode_frost"
-                                    android:scaleType="fitCenter"
-                                    android:src="@drawable/mode_5" />
+                                    android:scaleType="center" />
 
                             </LinearLayout>
 
@@ -268,32 +263,40 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/white"
-                                android:textSize="22sp"
+                                android:textSize="18sp"
                                 android:fontFamily="sans-serif-light"
                                 android:drawableStart="@mipmap/system_ok"
                                 android:drawablePadding="16dp"
-                                android:paddingBottom="16dp"
+                                android:paddingBottom="12dp"
                                 android:text="@string/system_services_available" />
 
                             <TextView
                                 android:id="@+id/systemUptime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-light"
                                 android:textColor="@color/white"
+                                android:textSize="14sp"
                                 android:text="@string/system_uptime" />
 
                             <TextView
                                 android:id="@+id/systemTemp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-light"
                                 android:textColor="@color/white"
+                                android:textSize="14sp"
+                                android:layout_marginTop="2dp"
                                 android:text="@string/system_temp" />
 
                             <TextView
                                 android:id="@+id/systemLoad"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-light"
                                 android:textColor="@color/white"
+                                android:textSize="14sp"
+                                android:layout_marginTop="2dp"
                                 android:text="@string/system_load" />
 
                         </LinearLayout>

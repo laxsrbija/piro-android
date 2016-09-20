@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
@@ -349,16 +348,17 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
         buttons.add((ImageButton) context.findViewById(R.id.modeFrost));
 
         for (int i = 0; i < buttons.size(); ++i) {
-            buttons.get(i).setImageDrawable(ResourcesCompat.getDrawable(context.getResources(),
-                    context.getResources().getIdentifier("mode_".concat(Integer.toString(i + 1)),
-                            "drawable", context.getPackageName()), null));
+            buttons.get(i).setImageResource(
+                    context.getResources().getIdentifier("mipmap/mode_" + (i + 1),
+                            null, context.getPackageName()));
         }
 
         if (status == 1) {
             int mode = sharedPref.getInt(context.getString(R.string.data_heater_mode_key), -1);
-            buttons.get(mode).setImageDrawable(ResourcesCompat.getDrawable(context.getResources(),
-                    context.getResources().getIdentifier("mode_".concat(Integer.toString(mode + 1)
-                            .concat("_sel")), "drawable", context.getPackageName()), null));
+            buttons.get(mode).setImageResource(
+                    context.getResources()
+                            .getIdentifier("mipmap/mode_" + (mode + 1) + "_sel",
+                            null, context.getPackageName()));
         }
 
     }

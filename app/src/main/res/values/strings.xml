@@ -13,9 +13,6 @@
     <string name="weather_background_desc">Trenutni uslovi</string>
     <string name="current_temperature_desc">Trenutni uslovi</string>
     <string name="daily_temperature_desc">Dnevni uslovi</string>
-    <string name="weather_visibility">Vidljivost</string>
-    <string name="weather_real_feel">Subjektivni osećaj</string>
-    <string name="weather_precipitation">Mogućnost padavina</string>
 
     <string name="thermal_increment" translatable="false">+</string>
     <string name="thermal_decrement" translatable="false">-</string>

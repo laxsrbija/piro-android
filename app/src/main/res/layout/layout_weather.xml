@@ -63,85 +63,43 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
-            <RelativeLayout
-                android:layout_width="60dp"
-                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/feelsLike"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/weather_real_feel"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
-                <ImageView
-                    android:id="@+id/weatherRealFeel"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginTop="1dp"
-                    android:contentDescription="@string/weather_real_feel"
-                    android:src="@drawable/weather_real_feel" />
+            <TextView
+                android:id="@+id/visibility"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:drawablePadding="3dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/weather_visibility"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/feelsLike"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="2dp"
-                    android:layout_toEndOf="@id/weatherRealFeel"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="75dp"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/weatherVisibility"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginTop="2dp"
-                    android:contentDescription="@string/weather_visibility"
-                    android:src="@drawable/weather_visibility" />
-
-                <TextView
-                    android:id="@+id/visibility"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="2dp"
-                    android:layout_toEndOf="@id/weatherVisibility"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="70dp"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/weatherPrecipitation"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:contentDescription="@string/weather_precipitation"
-                    android:src="@drawable/weather_precipitation" />
-
-                <TextView
-                    android:id="@+id/precipitation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_toEndOf="@id/weatherPrecipitation"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-
-            </RelativeLayout>
+            <TextView
+                android:id="@+id/precipitation"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/weather_precipitation"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
