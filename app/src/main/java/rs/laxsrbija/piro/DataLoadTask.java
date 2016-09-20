@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -65,12 +67,12 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
                 Request.Method.GET,
                 builder.toString(),
                 (String) null, listener,
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-                });
+                new ErrorResponse(mContext));
+
+        objectRequest.setRetryPolicy(
+                new DefaultRetryPolicy(5000,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         Volley.newRequestQueue(mContext).add(objectRequest);
 
@@ -78,7 +80,30 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
 
     }
 
+    private class ErrorResponse implements Response.ErrorListener {
 
+        private Activity context;
+
+        public ErrorResponse(Activity context) {
+            this.context = context;
+        }
+
+        @Override
+        public void onErrorResponse(VolleyError error) {
+
+            Log.e(PiroContract.APP_NAME, "Nije moguće povezati se na server!");
+
+            Snackbar.make(
+                    context.findViewById(R.id.swipeContainer),
+                    context.getString(R.string.error_failed_to_load),
+                    Snackbar.LENGTH_LONG)
+                    .show();
+
+            ((SwipeRefreshLayout) context.findViewById(R.id.swipeContainer)).setRefreshing(false);
+
+        }
+
+    }
 
     private Response.Listener<JSONObject> listener = new Response.Listener<JSONObject>() {
         @Override
@@ -87,7 +112,7 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
         }
     };
 
-    public class SaveDataTask extends AsyncTask<JSONObject, Void, Void> {
+    private class SaveDataTask extends AsyncTask<JSONObject, Void, Void> {
 
         @Override
         protected Void doInBackground(JSONObject... params) {
@@ -431,7 +456,6 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
         } else {
             Log.e(PiroContract.APP_NAME, "Unable to assign background: " + conditions);
         }
-
 
     }
 
