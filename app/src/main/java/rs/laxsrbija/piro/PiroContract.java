@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.net.wifi.SupplicantState;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 
 /**
  * Konstante koje projekat koristi
@@ -103,6 +104,11 @@ public class PiroContract {
             return SERVER_ADDRESS_EXTERNAL;
         }
 
+        // Uređaj radi na emulatoru
+        if (Build.FINGERPRINT.contains("generic")) {
+            return SERVER_ADDRESS_INTERNAL;
+        }
+
         WifiManager wifiManager = (WifiManager) activity.getSystemService(Context.WIFI_SERVICE);
         WifiInfo wifiInfo;
 
@@ -111,8 +117,9 @@ public class PiroContract {
             String ssid = wifiInfo.getSSID();
 //            Log.v("PIRO", "Wifi SSID: " + ssid);
 
-            if (ssid != null && ssid.contains(SSID))
+            if (ssid != null && ssid.contains(SSID)) {
                 return SERVER_ADDRESS_INTERNAL;
+            }
         }
 
 //        Log.v("PIRO", "Wifi not connected");
