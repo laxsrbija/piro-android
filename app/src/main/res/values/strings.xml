@@ -2,6 +2,9 @@
 
     <string name="app_name">PIRO</string>
 
+    <string name="menu_settings">Podešavanja</string>
+    <string name="menu_about">O aplikaciji</string>
+
     <string name="ledCentar">C</string>
     <string name="ledDesno">D</string>
     <string name="ledLevo">L</string>
@@ -75,5 +78,7 @@
     <string name="data_system_uptime_key" translatable="false">data_system_uptime</string>
     <string name="data_system_temp_key" translatable="false">data_system_temp</string>
     <string name="data_system_load_key" translatable="false">data_system_load</string>
+
+    <string name="error_failed_to_load">Nije moguće povezati se na PIRO server</string>
 
 </resources>
