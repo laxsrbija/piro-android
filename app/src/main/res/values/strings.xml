@@ -5,9 +5,9 @@
     <string name="menu_settings">Podešavanja</string>
     <string name="menu_about">O aplikaciji</string>
 
-    <string name="led_centar">C</string>
-    <string name="led_desno">D</string>
-    <string name="led_levo">L</string>
+    <string name="led_center">C</string>
+    <string name="led_right">D</string>
+    <string name="led_left">L</string>
     <string name="pc">R</string>
 
     <string name="weather_background_desc">Trenutni uslovi</string>
@@ -26,6 +26,7 @@
     <string name="mode_night">Noćna temperatura</string>
     <string name="mode_frost">Temperatura održavanja</string>
 
+    <string name="system_services_available">Svi servisi su dostupni</string>
     <string name="system_uptime">Operativno vreme:</string>
     <string name="system_temp">Temperatura servera:</string>
     <string name="system_load">Prosečno opterećenje servera:</string>
@@ -66,6 +67,7 @@
     <string name="data_system_temp_key" translatable="false">data_system_temp</string>
     <string name="data_system_load_key" translatable="false">data_system_load</string>
 
-    <string name="error_failed_to_load">Nije moguće povezati se na PIRO server</string>
+    <string name="error_loading_failed">Nije moguće povezati se na PIRO server</string>
+    <string name="error_heating_unavailable">Grejanje nije dostupno</string>
 
 </resources>

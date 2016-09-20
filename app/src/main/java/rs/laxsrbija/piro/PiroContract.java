@@ -59,9 +59,9 @@ public class PiroContract {
 
     public static class JSON {
 
-        public static final String RELAY_LED_CENTER = "led_centar";
-        public static final String RELAY_LED_RIGHT = "led_desno";
-        public static final String RELAY_LED_LEFT = "led_levo";
+        public static final String RELAY_LED_CENTER = "ledCentar";
+        public static final String RELAY_LED_RIGHT = "ledDesno";
+        public static final String RELAY_LED_LEFT = "ledLevo";
         public static final String RELAY_PC = "racunar";
 
         public static final String HEATER_STATUS = "statusPeci";
@@ -82,8 +82,8 @@ public class PiroContract {
         public static final String WEATHER_DAILY_LOW = "dnevnaMin";
         public static final String WEATHER_DAILY_ICON = "dnevnaIkona";
 
-        public static final String SYSTEM_UPTIME = "system_uptime";
-        public static final String SYSTEM_LOAD = "system_load";
+        public static final String SYSTEM_UPTIME = "systemUptime";
+        public static final String SYSTEM_LOAD = "systemLoad";
         public static final String SYSTEM_TEMP = "systemTemperature";
 
     }

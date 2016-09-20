@@ -77,7 +77,7 @@
                     android:layout_marginEnd="2dp"
                     android:layout_marginTop="1dp"
                     android:contentDescription="@string/weather_real_feel"
-                    android:src="@drawable/weather_realfeel" />
+                    android:src="@drawable/weather_real_feel" />
 
                 <TextView
                     android:id="@+id/feelsLike"
@@ -156,51 +156,32 @@
         android:orientation="horizontal"
         android:background="#ffffff">
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/dailyTemperatureImg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:paddingStart="8dp"
-            android:paddingEnd="13dp">
+            android:paddingEnd="13dp"
+            android:contentDescription="@string/daily_temperature_desc" />
 
-            <ImageView
-                android:id="@+id/dailyTemperatureImg"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/daily_temperature_desc" />
-
-        </FrameLayout>
-
-        <FrameLayout
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/dailyConditions"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:fontFamily="sans-serif"
+            android:textColor="#212121"
+            android:textSize="17sp" />
 
-            <TextView
-                android:id="@+id/dailyConditions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:textColor="#212121"
-                android:textSize="17sp" />
-
-        </FrameLayout>
-
-        <FrameLayout
+        <TextView
+            android:id="@+id/dailyTemperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#212121"
+            android:textSize="17sp"
             android:paddingStart="8dp"
-            android:paddingEnd="8dp">
-
-            <TextView
-                android:id="@+id/dailyTemperature"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:textColor="#212121"
-                android:textSize="17sp"/>
-
-        </FrameLayout>
+            android:paddingEnd="8dp"/>
 
     </LinearLayout>
 

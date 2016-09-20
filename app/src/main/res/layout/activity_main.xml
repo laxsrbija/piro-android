@@ -62,8 +62,8 @@
                                 android:layout_marginStart="8dp"
                                 android:fontFamily="sans-serif-light"
                                 android:textColor="@color/colorAccent"
-                                android:textOff="@string/led_centar"
-                                android:textOn="@string/led_centar"
+                                android:textOff="@string/led_center"
+                                android:textOn="@string/led_center"
                                 android:textSize="45sp" />
 
                             <ToggleButton
@@ -74,8 +74,8 @@
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginStart="8dp"
                                 android:fontFamily="sans-serif-light"
-                                android:textOff="@string/led_desno"
-                                android:textOn="@string/led_desno"
+                                android:textOff="@string/led_right"
+                                android:textOn="@string/led_right"
                                 android:textSize="45sp" />
 
                             <ToggleButton
@@ -86,8 +86,8 @@
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginStart="8dp"
                                 android:fontFamily="sans-serif-light"
-                                android:textOff="@string/led_levo"
-                                android:textOn="@string/led_levo"
+                                android:textOff="@string/led_left"
+                                android:textOn="@string/led_left"
                                 android:textSize="45sp" />
 
                             <ToggleButton
@@ -138,7 +138,8 @@
                                 android:layout_marginTop="20dp"
                                 android:gravity="center"
                                 android:visibility="gone"
-                                android:src="@drawable/heating_unavailable" />
+                                android:contentDescription="@string/error_heating_unavailable"
+                                android:src="@mipmap/heating_unavailable" />
 
                             <LinearLayout
                                 android:id="@+id/modeButtons"
@@ -252,7 +253,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
-                        card_view:cardBackgroundColor="#398e39"
+                        card_view:contentPadding="16dp"
+                        card_view:cardBackgroundColor="#2B2B2B"
                         card_view:cardCornerRadius="4dp"
                         card_view:cardElevation="2dp">
 
@@ -262,22 +264,36 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="22sp"
+                                android:fontFamily="sans-serif-light"
+                                android:drawableStart="@mipmap/system_ok"
+                                android:drawablePadding="16dp"
+                                android:paddingBottom="16dp"
+                                android:text="@string/system_services_available" />
+
+                            <TextView
                                 android:id="@+id/systemUptime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textColor="@color/white"
                                 android:text="@string/system_uptime" />
 
                             <TextView
                                 android:id="@+id/systemTemp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textColor="@color/white"
                                 android:text="@string/system_temp" />
 
                             <TextView
                                 android:id="@+id/systemLoad"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
+                                android:textColor="@color/white"
                                 android:text="@string/system_load" />
 
                         </LinearLayout>

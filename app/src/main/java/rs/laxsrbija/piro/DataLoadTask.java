@@ -95,7 +95,7 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
 
             Snackbar.make(
                     context.findViewById(R.id.swipeContainer),
-                    context.getString(R.string.error_failed_to_load),
+                    context.getString(R.string.error_loading_failed),
                     Snackbar.LENGTH_LONG)
                     .show();
 
@@ -374,7 +374,7 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
         StringBuilder builder = new StringBuilder();
         builder.append(resources.getString(R.string.system_temp));
         builder.append(" ");
-        builder.append(resources.getString(R.string.format_temp,
+        builder.append(resources.getString(R.string.format_temp_c,
                 sharedPref.getInt(context.getString(R.string.data_system_temp_key), -1)));
 
         TextView systemTemp = (TextView) context.findViewById(R.id.systemTemp);
