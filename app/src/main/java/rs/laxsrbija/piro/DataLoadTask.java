@@ -283,7 +283,11 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
 
         heaterHelper(context);
         systemHelper(context);
-        weatherBackgroundHelper(context);
+        try {
+            weatherBackgroundHelper(context);
+        } catch (IllegalArgumentException e) {
+            Log.e(PiroContract.APP_NAME, "Nije moguće učitati sliku, aktivnost je uništena.");
+        }
 
         ((SwipeRefreshLayout) context.findViewById(R.id.swipeContainer)).setRefreshing(false);
 
@@ -420,7 +424,7 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
     /**
      * Pomoćna funkcija za postavljanje pozadine vremenske prognoze
      */
-    private static void weatherBackgroundHelper(Activity context) {
+    private static void weatherBackgroundHelper(Activity context) throws IllegalArgumentException {
 
         SharedPreferences sharedPref = context.getPreferences(Context.MODE_PRIVATE);
         ImageView background = (ImageView) context.findViewById(R.id.weather_background);

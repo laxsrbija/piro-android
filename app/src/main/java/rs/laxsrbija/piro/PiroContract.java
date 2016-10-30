@@ -14,11 +14,11 @@ import android.os.Build;
  * Project piro-android
  */
 
-public class PiroContract {
+class PiroContract {
 
-    public static final String APP_NAME = "PIRO";
+    static final String APP_NAME = "PIRO";
 
-    public static final String SERVER_SCHEME = "http";
+    static final String SERVER_SCHEME = "http";
 
     /*
         Kako modem koji koristim ne može da se sa lokalne mreže poveže na svoju eksternu adresu (i obrnuto),
@@ -29,76 +29,76 @@ public class PiroContract {
         postaviti zastavicu ispod na 'false' i koristiti samo globalnu adresu.
         U suprotnom, neophodno je definisati i SSID Wifi mreže.
      */
-    public static final boolean SEPARATE_LOCAL_AND_EXTERNAL_IP = true;
-    public static final String SSID = "PAROV STELAR";
-    public static final String SERVER_ADDRESS_INTERNAL = "192.168.1.2";
-    public static final String SERVER_ADDRESS_EXTERNAL = "piro.ddns.net";
+    private static final boolean SEPARATE_LOCAL_AND_EXTERNAL_IP = true;
+    private static final String SSID = "PAROV STELAR";
+    private static final String SERVER_ADDRESS_INTERNAL = "192.168.1.2";
+    private static final String SERVER_ADDRESS_EXTERNAL = "piro.ddns.net";
 
-    public static final String PIRO_DIR = "piro";
-    public static final String QUERY_DIR = "rpi";
-    public static final String QUERY_TARGET ="piro-query.php";
-    public static final String FUNCTION = "f";
-    public static final String ARGUMENT = "arg";
+    private static final String PIRO_DIR = "piro";
+    private static final String QUERY_DIR = "rpi";
+    private static final String QUERY_TARGET ="piro-query.php";
+    static final String FUNCTION = "f";
+    static final String ARGUMENT = "arg";
 
-    public static final String GET_JSON_FUNCTION = "getJSON";
+    static final String GET_JSON_FUNCTION = "getJSON";
 
-    public static final String RELAY_TOGGLE_FUNCTION = "toggleRelay";
-    public static final String PC_TOGGLE_FUNCTION = "togglePC";
-    public static final String ARG_LED_RIGHT = "1";
-    public static final String ARG_LED_CENTER = "0";
-    public static final String ARG_LED_LEFT = "2";
+    static final String RELAY_TOGGLE_FUNCTION = "toggleRelay";
+    static final String PC_TOGGLE_FUNCTION = "togglePC";
+    static final String ARG_LED_RIGHT = "1";
+    static final String ARG_LED_CENTER = "0";
+    static final String ARG_LED_LEFT = "2";
 
-    public static final String HEATING_TOGGLE_FUNCTION = "toggleThermal";
-    public static final String HEATING_INCREMENT = "increment";
-    public static final String HEATING_DECREMENT = "decrement";
-    public static final String HEATING_MODE = "setMode";
-    public static final String ARG_MODE_AUTO = "0";
-    public static final String ARG_MODE_DAY = "2";
-    public static final String ARG_MODE_NIGHT = "3";
-    public static final String ARG_MODE_FROST = "4";
+    static final String HEATING_TOGGLE_FUNCTION = "toggleThermal";
+    static final String HEATING_INCREMENT = "increment";
+    static final String HEATING_DECREMENT = "decrement";
+    static final String HEATING_MODE = "setMode";
+    static final String ARG_MODE_AUTO = "0";
+    static final String ARG_MODE_DAY = "2";
+    static final String ARG_MODE_NIGHT = "3";
+    static final String ARG_MODE_FROST = "4";
 
-    public static class JSON {
+    static class JSON {
 
-        public static final String RELAY_LED_CENTER = "ledCentar";
-        public static final String RELAY_LED_RIGHT = "ledDesno";
-        public static final String RELAY_LED_LEFT = "ledLevo";
-        public static final String RELAY_PC = "racunar";
+        static final String RELAY_LED_CENTER = "ledCentar";
+        static final String RELAY_LED_RIGHT = "ledDesno";
+        static final String RELAY_LED_LEFT = "ledLevo";
+        static final String RELAY_PC = "racunar";
 
-        public static final String HEATER_STATUS = "statusPeci";
-        public static final String HEATER_TEMP = "temperaturaPeci";
-        public static final String HEATER_MODE = "rezimPeci";
+        static final String HEATER_STATUS = "statusPeci";
+        static final String HEATER_TEMP = "temperaturaPeci";
+        static final String HEATER_MODE = "rezimPeci";
 
-        public static final String WEATHER_CITY = "grad";
-        public static final String WEATHER_CURRENT_TEMP = "trenutnaTemperatura";
-        public static final String WEATHER_CURRENT_CONDITIONS = "trenutnaStanje";
-        public static final String WEATHER_CURRENT_ICON = "trenutnaIkona";
-        public static final String WEATHER_CURRENT_PRECIPITATION = "padavine";
-        public static final String WEATHER_CURRENT_VISIBILITY = "vidljivost";
-        public static final String WEATHER_CURRENT_FEELS_LIKE = "subjektivniOsecaj";
-        public static final String WEATHER_CURRENT_UV = "uvIndeks";
-        public static final String WEATHER_DAY = "dan";
-        public static final String WEATHER_DAILY_CONDITIONS = "dnevnaStanje";
-        public static final String WEATHER_DAILY_HIGH = "dnevnaMax";
-        public static final String WEATHER_DAILY_LOW = "dnevnaMin";
-        public static final String WEATHER_DAILY_ICON = "dnevnaIkona";
+        static final String WEATHER_CITY = "grad";
+        static final String WEATHER_CURRENT_TEMP = "trenutnaTemperatura";
+        static final String WEATHER_CURRENT_CONDITIONS = "trenutnaStanje";
+        static final String WEATHER_CURRENT_ICON = "trenutnaIkona";
+        static final String WEATHER_CURRENT_PRECIPITATION = "padavine";
+        static final String WEATHER_CURRENT_VISIBILITY = "vidljivost";
+        static final String WEATHER_CURRENT_FEELS_LIKE = "subjektivniOsecaj";
+        static final String WEATHER_CURRENT_UV = "uvIndeks";
+        static final String WEATHER_DAY = "dan";
+        static final String WEATHER_DAILY_CONDITIONS = "dnevnaStanje";
+        static final String WEATHER_DAILY_HIGH = "dnevnaMax";
+        static final String WEATHER_DAILY_LOW = "dnevnaMin";
+        static final String WEATHER_DAILY_ICON = "dnevnaIkona";
 
-        public static final String SYSTEM_UPTIME = "systemUptime";
-        public static final String SYSTEM_LOAD = "systemLoad";
-        public static final String SYSTEM_TEMP = "systemTemperature";
+        static final String SYSTEM_UPTIME = "systemUptime";
+        static final String SYSTEM_LOAD = "systemLoad";
+        static final String SYSTEM_TEMP = "systemTemperature";
 
     }
 
-    public static Uri.Builder buildPreliminaryURI(Activity activity) {
+    static Uri.Builder buildPreliminaryURI(Activity activity) {
         Uri.Builder builder = new Uri.Builder();
         builder.scheme(SERVER_SCHEME)
-                .authority(getServerAddress(activity))
+                .encodedAuthority(getServerAddress(activity))
                 .appendPath(PIRO_DIR)
                 .appendPath(QUERY_DIR)
                 .appendPath(QUERY_TARGET);
         return builder;
     }
 
-    public static String getServerAddress(Activity activity) {
+    private static String getServerAddress(Activity activity) {
 
         if (!SEPARATE_LOCAL_AND_EXTERNAL_IP) {
             return SERVER_ADDRESS_EXTERNAL;

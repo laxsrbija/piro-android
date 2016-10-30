@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <include layout="@layout/layout_toolbar" />
@@ -112,7 +112,8 @@
                         android:layout_marginTop="8dp"
                         card_view:cardBackgroundColor="#FFA000"
                         card_view:cardCornerRadius="4dp"
-                        card_view:cardElevation="2dp">
+                        card_view:cardElevation="2dp"
+                        card_view:cardPreventCornerOverlap="false">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -132,14 +133,14 @@
                                 tools:ignore="RtlSymmetry" />
 
                             <ImageView
+                                android:id="@+id/thermalTempImageView"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
-                                android:id="@+id/thermalTempImageView"
                                 android:layout_marginTop="20dp"
-                                android:gravity="center"
-                                android:visibility="gone"
                                 android:contentDescription="@string/error_heating_unavailable"
-                                android:src="@mipmap/heating_unavailable" />
+                                android:gravity="center"
+                                android:src="@mipmap/heating_unavailable"
+                                android:visibility="gone" />
 
                             <LinearLayout
                                 android:id="@+id/modeButtons"
@@ -248,10 +249,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
-                        card_view:contentPadding="16dp"
                         card_view:cardBackgroundColor="#2B2B2B"
                         card_view:cardCornerRadius="4dp"
-                        card_view:cardElevation="2dp">
+                        card_view:cardElevation="2dp"
+                        card_view:contentPadding="16dp">
 
                         <LinearLayout
                             android:layout_width="fill_parent"
@@ -259,45 +260,45 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:layout_gravity="center_vertical"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/white"
-                                android:textSize="18sp"
-                                android:fontFamily="sans-serif-light"
-                                android:drawableStart="@mipmap/system_ok"
+                                android:layout_gravity="center_vertical"
                                 android:drawablePadding="16dp"
+                                android:drawableStart="@mipmap/system_ok"
+                                android:fontFamily="sans-serif-light"
                                 android:paddingBottom="12dp"
-                                android:text="@string/system_services_available" />
+                                android:text="@string/system_services_available"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
 
                             <TextView
                                 android:id="@+id/systemUptime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-light"
+                                android:text="@string/system_uptime"
                                 android:textColor="@color/white"
-                                android:textSize="14sp"
-                                android:text="@string/system_uptime" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/systemTemp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="sans-serif-light"
-                                android:textColor="@color/white"
-                                android:textSize="14sp"
                                 android:layout_marginTop="2dp"
-                                android:text="@string/system_temp" />
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/system_temp"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/systemLoad"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="sans-serif-light"
-                                android:textColor="@color/white"
-                                android:textSize="14sp"
                                 android:layout_marginTop="2dp"
-                                android:text="@string/system_load" />
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/system_load"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
 
                         </LinearLayout>
 

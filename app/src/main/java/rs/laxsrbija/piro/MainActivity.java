@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
@@ -19,11 +20,16 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         getSupportActionBar().setIcon(R.mipmap.ic_icon);
 
         DataLoadTask.displayStoredData(this);
-        new DataLoadTask(MainActivity.this, DataLoadTask.MODE_REGULAR).execute();
 
         ((SwipeRefreshLayout) findViewById(R.id.swipeContainer)).setOnRefreshListener(this);
         PiroOnClickListener.setOnClickListener(MainActivity.this);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new DataLoadTask(MainActivity.this, DataLoadTask.MODE_REGULAR).execute();
     }
 
     @Override
