@@ -57,7 +57,7 @@ public class DataLoadTask extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... params) {
 
-        Uri.Builder builder = PiroContract.buildPreliminaryURI(mContext);
+        Uri.Builder builder = PiroContract.buildPreliminaryURI();
         builder.appendQueryParameter(PiroContract.FUNCTION, PiroContract.GET_JSON_FUNCTION)
                 .appendQueryParameter(PiroContract.ARGUMENT, mRequestType)
                 .build();
